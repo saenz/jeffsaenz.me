@@ -1,8 +1,9 @@
 # jeffsaenz.me
 
-A gatsby, bootstrap and reactjs version of my latest personal site. It's currently hosted [on netlify](http://jeffsaenz.me/).
+A gatsby, bootstrap and reactjs version of my latest personal site. It's currently hosted on [netlify](https://netlify.com/).
 
 ## Features
+The following were used in the development of the site:
 
 * [Bootstrap 4](https://getbootstrap.com/) Modular component framework
 * [ReactStrap](https://reactstrap.github.io) Easy to use React Bootstrap 4 components
