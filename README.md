@@ -1,11 +1,11 @@
-# gatsby-starter-hello-world
-Starter with the bare essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site
-
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
-```
-
-## Running in development
-`gatsby develop`
 # jeffsaenz.me
+
+A gatsby, bootstrap and reactjs version of my latest personal site. It's currently hosted [on netlify](http://jeffsaenz.me/).
+
+## Features
+
+* [Bootstrap 4](https://getbootstrap.com/) Modular component framework
+* [Gatsby](https://gatsbyjs.org/) Static site generator w/ react.
+* [React](https://reactjs.org/) UI framework
+* [Netlify](https://netlify.com/) Site hosting
+* [AWS Lambda](https://aws.amazon.com/lambda/) Backend cloud function for email notification using SNS.
