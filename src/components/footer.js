@@ -159,11 +159,11 @@ const loader = css`
 
 const FORM_URL = "https://z3iokgsyoc.execute-api.us-west-1.amazonaws.com/dev/send";
 
-// const encode = data => {
-//   return Object.keys(data)
-//     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-//     .join('&')
-// }
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 class Footer extends React.Component {
 	constructor(props) {
@@ -212,7 +212,11 @@ class Footer extends React.Component {
 	    fetch(FORM_URL, {
 	      	method: 'POST',
 	      	headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-	      	body: data
+	      	body: encode({ 
+	      		fullname: this.state.fullname,
+	      		email: this.state.email,
+	      		msg: this.state.message
+	      	}),
 	    })
 	      .then(this.handleSuccess)
 	      .catch(error => alert(error))
