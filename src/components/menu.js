@@ -5,9 +5,11 @@ import { Container } from 'reactstrap'
 import avatar from '../images/jeff.jpg'
 import Headroom from 'react-headroom'
 
+const AVATAR_IMG_SIZE = 48
+
 const Avatar = styled.div`
 	position: relative;
-	height: 63px;
+	//height: 63px;
 	//margin-left: 1rem;
 	margin-right: .5rem;
 	display: inline-block;
@@ -37,8 +39,8 @@ const Avatar = styled.div`
 	  border-style: solid;
 	  border-width: 2px;
 	  border-radius: 50%;
-	  width: 48px;
-	  height: 48px;
+	  width: ${AVATAR_IMG_SIZE}px;
+	  height: ${AVATAR_IMG_SIZE}px;
 	  object-fit: cover;
 	  border-color: white;
 	}
@@ -64,20 +66,20 @@ const profession = css`
 const Menu = () => (
 	<header>
 	   <Headroom>
-	    	<nav className="navbar  navbar-dark bg-primary">
-		       	<Container>
-				    <Link to="/" className="navbar-brand">
+	    	<nav className="navbar  navbar-dark bg-primary" style={{justifyContent: 'start'}}>
+		       	{/*<Container>*/}
+				    {/*<Link to="/" className="navbar-brand">*/}
 				        <Avatar className="d-inline-block align-top">
 				          <div className="avatar-image">
-				            <img src={avatar} width="48" height="48" alt="" />
+				            <img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
 				          </div>
 				        </Avatar>
-				        <div className="card-info d-inline-block align-top">
+				        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
 				          <div className={fullName}>Jeff Saenz</div>
 				          <div className={profession}>Front End Web Developer</div>
 				        </div>
-				    </Link>
-				</Container>
+				    {/*</Link>*/}
+				{/*</Container>*/}
 			</nav>
 		</Headroom>
 	</header>
