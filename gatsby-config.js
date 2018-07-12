@@ -6,8 +6,13 @@
     	//disqus: 'gatsby-starter-blog'// put your disqus ID here
   	},
  	plugins: [
-    	'gatsby-plugin-emotion',
+		{
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        autoLabel: true
+      }
+    },
 		'gatsby-plugin-react-helmet',
-    	'gatsby-plugin-sass'
+   	'gatsby-plugin-sass'
  	]
  }

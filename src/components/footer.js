@@ -162,6 +162,13 @@ const loader = css`
 	}
 `
 
+const emailAddress = css`
+	margin-top: '1rem';
+	overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+`
+
 const FORM_URL = "https://z3iokgsyoc.execute-api.us-west-1.amazonaws.com/dev/send";
 
 const encode = data => {
@@ -258,8 +265,8 @@ class Footer extends React.Component {
 			             	<div className="city">Cypress, Ca</div>
 			              	<p/>
 			              	<div>Phone<br/>714-457-2595</div>
-			              	<div style={{marginTop: '1rem'}}>
-			              		Email <br/><a href="mailto:jsaenzsweng@gmail.com" rel="noreferrer">jsaenzsweng@gmail.com</a>
+			              	<div className={emailAddress}>
+			              		Email <br/><a href="mailto:jeffsaenz.me@gmail.com" rel="noreferrer">jeffsaenz.me@gmail.com</a>
 			              	</div>
 			            </div>
 		        
