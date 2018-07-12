@@ -3,11 +3,16 @@ import {cx, css} from 'react-emotion'
 import Twitter from 'react-feather/dist/icons/twitter';
 import Github from 'react-feather/dist/icons/github';
 import LinkedIn from 'react-feather/dist/icons/linkedin';
-import { Container, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Container from 'reactstrap/lib/Container'
+import Button from 'reactstrap/lib/Button'
+import Modal from 'reactstrap/lib/Modal'
+import ModalHeader from 'reactstrap/lib/ModalHeader'
+import ModalBody from 'reactstrap/lib/ModalBody'
+import ModalFooter from 'reactstrap/lib/ModalFooter'
+
 import 'whatwg-fetch'
 
 const footer = css`
-	//background-color: #708090;
 	padding-bottom: .5rem;
 	.site-link {
 	  color: white;
@@ -206,8 +211,6 @@ class Footer extends React.Component {
 
 		// send form
 		this.setState({isSending:true})
-
-		const data = new FormData(event.target);
 	    
 	    fetch(FORM_URL, {
 	      	method: 'POST',
@@ -307,7 +310,7 @@ class Footer extends React.Component {
 						        </div>
 						    </div>
 
-						    <button 
+						    <Button 
 						    	name="submit" 
 						    	type="submit" 
 						    	disabled={this.state.isSending}
@@ -322,7 +325,7 @@ class Footer extends React.Component {
 					    				Send
 					    			</React.Fragment>
 					    		)}
-						    </button>
+						    </Button>
 
 					        <div>
 							    <Modal isOpen={this.state.modal} toggle={this.closeModal} className={this.props.className}>

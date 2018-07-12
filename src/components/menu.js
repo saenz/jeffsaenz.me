@@ -63,7 +63,7 @@ const profession = css`
 
 const Menu = () => (
 	<header>
-	    <Headroom>
+	   <Headroom>
 	    	<nav className="navbar  navbar-dark bg-primary">
 		       	<Container>
 				    <Link to="/" className="navbar-brand">
@@ -80,7 +80,6 @@ const Menu = () => (
 				</Container>
 			</nav>
 		</Headroom>
-
 	</header>
 )
 
