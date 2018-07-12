@@ -163,7 +163,6 @@ const loader = css`
 `
 
 const emailAddress = css`
-	margin-top: '1rem';
 	overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
@@ -265,8 +264,8 @@ class Footer extends React.Component {
 			             	<div className="city">Cypress, Ca</div>
 			              	<p/>
 			              	<div>Phone<br/>714-457-2595</div>
-			              	<div className={emailAddress}>
-			              		Email <br/><a href="mailto:jeffsaenz.me@gmail.com" rel="noreferrer">jeffsaenz.me@gmail.com</a>
+			              	<div style={{marginTop: '1rem'}}>
+			              		Email <br/><a className={emailAddress} href="mailto:jeffsaenz.me@gmail.com" rel="noreferrer">jeffsaenz.me@gmail.com</a>
 			              	</div>
 			            </div>
 		        
