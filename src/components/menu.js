@@ -66,7 +66,7 @@ const profession = css`
 const Menu = () => (
 	<header>
 	   <Headroom>
-	    	<nav className="navbar  navbar-dark bg-primary" style={{justifyContent: 'start'}}>
+	    	<nav className="navbar  navbar-dark bg-primary" style={{justifyContent: 'start', flexWrap: 'nowrap'}}>
 		       	{/*<Container>*/}
 				    {/*<Link to="/" className="navbar-brand">*/}
 				        <Avatar className="d-inline-block align-top">
@@ -76,7 +76,7 @@ const Menu = () => (
 				        </Avatar>
 				        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
 				          <div className={fullName}>Jeff Saenz</div>
-				          <div className={profession}>Front End Web Developer</div>
+				          <div className={profession}>Front End Web Developer <span className="d-none d-md-inline">(Freelance)</span></div>
 				        </div>
 				    {/*</Link>*/}
 				{/*</Container>*/}

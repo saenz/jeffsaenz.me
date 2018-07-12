@@ -28,7 +28,7 @@ export default props => (
 					        <h2>About Me</h2>
 
 					        <p>
-					        	Well rounded web developer with a good / strong foundation in 
+					        	Well rounded freelance web developer with a good / strong foundation in 
 					        	front end and full stack development. My latest endeavors include implementing SSR w/ React 
 					        	using <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">nextjs.org</a>, serverless 
 					        	computing with AWS, GraphQL and static site generation using specifically 
