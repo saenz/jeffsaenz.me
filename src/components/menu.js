@@ -1,6 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
-import styled, {css} from 'react-emotion'
+import styled, {cx,keyframes,css} from 'react-emotion'
 import { Container } from 'reactstrap'
 import avatar from '../images/jeff.jpg'
 import Headroom from 'react-headroom'
@@ -63,26 +62,105 @@ const profession = css`
   line-height: 1rem;
 `
 
-const Menu = () => (
-	<header>
-	   <Headroom>
-	    	<nav className="navbar  navbar-dark bg-primary" style={{justifyContent: 'start', flexWrap: 'nowrap'}}>
-		       	{/*<Container>*/}
-				    {/*<Link to="/" className="navbar-brand">*/}
-				        <Avatar className="d-inline-block align-top">
-				          <div className="avatar-image">
-				            <img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
-				          </div>
-				        </Avatar>
-				        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
-				          <div className={fullName}>Jeff Saenz</div>
-				          <div className={profession}>Front End Web Developer <span className="d-none d-md-inline">(Freelance)</span></div>
-				        </div>
-				    {/*</Link>*/}
-				{/*</Container>*/}
-			</nav>
-		</Headroom>
-	</header>
-)
+// burger
+const burger = css`
+	background: none;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 24px;
+	height: 20px;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-left: 2rem;
+	&:focus {
+		outline: none;
+	}
+`
+const line = css`
+	background: #474c55;
+    display: block;
+    height: 4px;
+    border-radius: 1px;
+    position: absolute;
+    width: 100%;
+`
+
+const bun = props =>
+	css`
+		${line};
+		opacity: ${props.burgerOpen ? 0 : 1};
+	    transform: scale(${props.burgerOpen ? .5 : 1});
+	    transition: all .5s;
+	    ${props.side} : 0;
+	`
+
+const Bun = styled('i')(bun)
+
+const patty = props =>
+	css`
+		${line};
+		top: 50%;
+    	margin-top: -2px;
+    	transform: rotateZ(${props.burgerOpen ? props.rotatez : "0deg"});
+    	transition: transform .5s
+	`
+
+const Patty = styled('i')(patty)
+
+// menu
+class Menu extends React.Component {
+	constructor(props) {
+    	super(props);
+    	this.state = {
+      		burgerOpen: false
+    	};
+
+    	this.burgerToggle = this.burgerToggle.bind(this);
+    }
+
+    burgerToggle(event) {
+    	this.setState(prevState => ({
+  			burgerOpen: !prevState.burgerOpen
+		}));
+    	console.log('handle burger')
+    }
+
+	render() {
+		return (
+			<header>
+			   <Headroom>
+			    	<nav className="navbar  navbar-dark bg-primary"> {/* style={{justifyContent: 'start', flexWrap: 'nowrap'}}>*/}
+				       	{/*<Container>*/}
+						    {/*<Link to="/" className="navbar-brand">*/}
+						        <div>
+							        <Avatar className="d-inline-block align-top">
+							          <div className="avatar-image">
+							            <img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
+							          </div>
+							        </Avatar>
+							        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
+							          <div className={fullName}>Jeff Saenz</div>
+							          <div className={profession}>Front End Web Developer <span className="d-none d-md-inline">(Freelance)</span></div>
+							        </div>
+						    	</div>
+						    	<div>
+						    		<button className={burger} onClick={this.burgerToggle}>
+						    			<Bun side={"top"} burgerOpen={this.state.burgerOpen} />
+						    			<Patty rotatez={"45deg"} burgerOpen={this.state.burgerOpen} />
+						    			<Patty rotatez={"-45deg"} burgerOpen={this.state.burgerOpen} />
+						    			<Bun side={"bottom"} burgerOpen={this.state.burgerOpen} />
+						    		</button>
+						    	</div>
+						    {/*</Link>*/}
+						{/*</Container>*/}
+					</nav>
+				</Headroom>
+			</header>
+		)
+	}
+}
 
 export default Menu
