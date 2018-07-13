@@ -122,10 +122,11 @@ class Menu extends React.Component {
     }
 
     burgerToggle(event) {
+    	this.props.toggleSideMenu(this.state.burgerOpen)
+
     	this.setState(prevState => ({
   			burgerOpen: !prevState.burgerOpen
 		}));
-    	console.log('handle burger')
     }
 
 	render() {
@@ -135,7 +136,7 @@ class Menu extends React.Component {
 			    	<nav className="navbar  navbar-dark bg-primary"> {/* style={{justifyContent: 'start', flexWrap: 'nowrap'}}>*/}
 				       	{/*<Container>*/}
 						    {/*<Link to="/" className="navbar-brand">*/}
-						        <div>
+						        <div style={{display: "flex", alignItems: "center"}}>
 							        <Avatar className="d-inline-block align-top">
 							          <div className="avatar-image">
 							            <img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
