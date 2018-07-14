@@ -74,7 +74,6 @@ const burger = css`
 	display: inline-block;
 	cursor: pointer;
 	vertical-align: middle;
-	margin-left: 2rem;
 	&:focus {
 		outline: none;
 	}
@@ -110,6 +109,10 @@ const patty = props =>
 
 const Patty = styled('i')(patty)
 
+const animation = css`
+	transform: translateX(-290px);
+`
+
 // menu
 class Menu extends React.Component {
 	constructor(props) {
@@ -122,44 +125,38 @@ class Menu extends React.Component {
     }
 
     burgerToggle(event) {
-    	this.props.toggleSideMenu(this.state.burgerOpen)
-
     	this.setState(prevState => ({
   			burgerOpen: !prevState.burgerOpen
 		}));
+    	this.props.toggleSideMenu(this.state.burgerOpen)
     }
 
 	render() {
 		return (
-			<header>
-			   <Headroom>
-			    	<nav className="navbar  navbar-dark bg-primary"> {/* style={{justifyContent: 'start', flexWrap: 'nowrap'}}>*/}
-				       	{/*<Container>*/}
-						    {/*<Link to="/" className="navbar-brand">*/}
-						        <div style={{display: "flex", alignItems: "center"}}>
-							        <Avatar className="d-inline-block align-top">
-							          <div className="avatar-image">
-							            <img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
-							          </div>
-							        </Avatar>
-							        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
-							          <div className={fullName}>Jeff Saenz</div>
-							          <div className={profession}>Front End Web Developer <span className="d-none d-md-inline">(Freelance)</span></div>
-							        </div>
-						    	</div>
-						    	<div>
-						    		<button className={burger} onClick={this.burgerToggle}>
-						    			<Bun side={"top"} burgerOpen={this.state.burgerOpen} />
-						    			<Patty rotatez={"45deg"} burgerOpen={this.state.burgerOpen} />
-						    			<Patty rotatez={"-45deg"} burgerOpen={this.state.burgerOpen} />
-						    			<Bun side={"bottom"} burgerOpen={this.state.burgerOpen} />
-						    		</button>
-						    	</div>
-						    {/*</Link>*/}
-						{/*</Container>*/}
-					</nav>
-				</Headroom>
-			</header>
+	    	<nav className="navbar navbar-dark bg-primary" style={{justifyContent: 'flex-start'}}>
+		       	{/*<Container>*/}
+				    {/*<Link to="/" className="navbar-brand">*/}
+				    		<button className={burger} onClick={this.burgerToggle}>
+				    			<Bun side={"top"} burgerOpen={this.state.burgerOpen} />
+				    			<Patty rotatez={"45deg"} burgerOpen={this.state.burgerOpen} />
+				    			<Patty rotatez={"-45deg"} burgerOpen={this.state.burgerOpen} />
+				    			<Bun side={"bottom"} burgerOpen={this.state.burgerOpen} />
+				    		</button>
+				        <div style={{display: "flex", alignItems: "center", marginLeft: "2rem"}}>
+					        <Avatar className="d-inline-block align-top">
+					          <div className="avatar-image">
+					            <img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
+					          </div>
+					        </Avatar>
+					        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
+					          <div className={fullName}>Jeff Saenz</div>
+					          <div className={profession}>Front End Web Developer <span className="d-none d-md-inline">(Freelance)</span></div>
+					        </div>
+				    	</div>
+
+				    {/*</Link>*/}
+				{/*</Container>*/}
+			</nav>
 		)
 	}
 }

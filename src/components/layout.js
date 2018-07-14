@@ -39,22 +39,40 @@ const alertBox = css`
 const PageContent = styled.div`
 	transition: transform 1s;
 `
+const MainWrap = styled.div`
+	position: relative;
+`
 
-const SideMenu = styled.div`
+const SideMenu = styled.aside`
     position: fixed;
-    left: 100vw;
+    padding-top: 1rem;
+    top: 0;
+    left: -290px;
     width: 290px;
     height: 100vh;
     min-height: 100%;
     background: #fff;
     text-align: left;
-    overflow-y: scroll;
+    overflow-y: hidden;
     z-index: 999;
    	transition: transform 1s;
    	background-color: #e2e2e2;
+   	display:block;
+   	list-type: none;
 `
+
 const animation = css`
-	transform: translateX(-290px);
+	transform: translateX(290px);
+`
+
+
+const MsgBar = styled.div`
+	font-size: .75rem;
+    background-color: #322348;
+`
+
+const Header = styled.header`
+	transition: transform 1s;
 `
 
 class Layout extends React.Component {
@@ -68,14 +86,20 @@ class Layout extends React.Component {
     }
 
     toggleSideMenu(isOpen) {
-    	this.setState({ sideMenuOpen: isOpen })
+    	this.setState(prevstate => ({
+    		sideMenuOpen: !prevstate.sideMenuOpen 
+    	}))
     	console.log('toggleSideMenu called isOpen =' + isOpen)
     }
 
 	render() {
 		return (
 		    <div className='App'>
-		    	<Helmet>
+		    	<Helmet
+	    			bodyAttributes={{
+						class: this.state.sideMenuOpen ? 'nav_openx' : ''
+					}}
+				>
 			        <title>{config.siteTitle}</title>
 			        <link rel="icon" href={favicon} />
 			        <meta name="description" content={config.description} />
@@ -94,24 +118,28 @@ class Layout extends React.Component {
 			        </button>
 			      </div>
 			    </div>
+			    
+			    <MainWrap id="mainWrap">
+			    	<MsgBar className={"d-block text-center text-bold text-white px-3 py-2"}>
+						If you need a developer, I'm for hire.
+					</MsgBar>
+					
+					<Header className={cx("sticky-top", {[animation]: this.state.sideMenuOpen})}>
+    					<SideMenu>
+	    					<ul>
+	    						<li>About</li>
+	    						<li>Services</li>
+	    						<li>Contact</li>
+	    					</ul>
+    					</SideMenu>
+    				    <Menu toggleSideMenu={this.toggleSideMenu} />
+    				</Header>
 
-	    		<ThemeProvider theme={theme}>
-	    			<div>
-	    				<Menu toggleSideMenu={this.toggleSideMenu} />
-						<SideMenu className={cx({[animation]: this.state.sideMenuOpen})}>
-		    				<ul>
-		    					<li>About</li>
-		    					<li>Services</li>
-		    					<li>Contact</li>
-		    				</ul>
-	    				</SideMenu>
-	    				<PageContent className={cx({[animation]: this.state.sideMenuOpen})}>{this.props.children}</PageContent>
-	    			</div>
-	    		</ThemeProvider>
+    				<PageContent  className={cx({[animation]: this.state.sideMenuOpen})}>{this.props.children}</PageContent>
 
-	    		<ThemeProvider theme={theme}>
-		    		<Footer />
-		    	</ThemeProvider>
+			    	<Footer  className={cx({[animation]: this.state.sideMenuOpen})}/>
+		    	</MainWrap>
+
 		    </div>
 		)
 	}
