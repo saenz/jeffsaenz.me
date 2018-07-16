@@ -168,7 +168,7 @@ class Layout extends React.Component {
 			    </div>
 			    
 				<div className={msgBar}>
-					If you need a developer, I'm for hire.
+					I'm for Hire. 
 				</div>	  
 
 				<header className={cx(
