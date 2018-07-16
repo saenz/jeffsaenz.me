@@ -111,7 +111,6 @@ const Patty = styled('i')(patty)
 class Menu extends React.Component {
 	constructor(props) {
     	super(props)
-    	this.burgerToggle = this.burgerToggle.bind(this);
     }
 
 	render() {
