@@ -2,12 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Helmet from 'react-helmet'
-import styled, {cx, css} from 'react-emotion'
+import {cx, css} from 'react-emotion'
 import Menu from '../components/menu'
 import Footer from '../components/footer'
 import config from '../config/site'
-import { ThemeProvider } from 'emotion-theming'
-import theme from '../styles/theme'
 //import '../styles/global'
 import favicon from '../images/favicon.ico'
 
@@ -40,9 +38,6 @@ const alertBox = css`
 `
 const pageContent = css`
 	transition: transform 1s;
-`
-const mainwrap = css`
-	position: relative;
 `
 
 const sideMenu = css`
@@ -176,7 +171,8 @@ class Layout extends React.Component {
 							)}
 						>
 
-							<Menu toggleSideMenu={this.toggleSideMenu} />
+							<Menu toggleSideMenu={this.toggleSideMenu} isOpen={ this.state.sideMenuOpen }/>
+
 							<div style={{position: "relative"}}>
 								<aside className={cx(
 									sideMenu,

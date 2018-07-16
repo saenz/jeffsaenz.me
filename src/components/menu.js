@@ -1,8 +1,6 @@
 import React from 'react'
-import styled, {cx,keyframes,css} from 'react-emotion'
-import { Container } from 'reactstrap'
+import styled, {css} from 'react-emotion'
 import avatar from '../images/jeff.jpg'
-import Headroom from 'react-headroom'
 
 const AVATAR_IMG_SIZE = 48
 
@@ -109,26 +107,11 @@ const patty = props =>
 
 const Patty = styled('i')(patty)
 
-const animation = css`
-	transform: translateX(-290px);
-`
-
 // menu
 class Menu extends React.Component {
 	constructor(props) {
-    	super(props);
-    	this.state = {
-      		burgerOpen: false
-    	};
-
+    	super(props)
     	this.burgerToggle = this.burgerToggle.bind(this);
-    }
-
-    burgerToggle(event) {
-    	this.setState(prevState => ({
-  			burgerOpen: !prevState.burgerOpen
-		}));
-    	this.props.toggleSideMenu(this.state.burgerOpen)
     }
 
 	render() {
@@ -136,11 +119,11 @@ class Menu extends React.Component {
 	    	<nav className="navbar navbar-dark bg-primary" style={{justifyContent: 'flex-start'}}>
 		       	{/*<Container>*/}
 				    {/*<Link to="/" className="navbar-brand">*/}
-				    		<button className={burger} onClick={this.burgerToggle}>
-				    			<Bun side={"top"} burgerOpen={this.state.burgerOpen} />
-				    			<Patty rotatez={"45deg"} burgerOpen={this.state.burgerOpen} />
-				    			<Patty rotatez={"-45deg"} burgerOpen={this.state.burgerOpen} />
-				    			<Bun side={"bottom"} burgerOpen={this.state.burgerOpen} />
+				    		<button className={burger} onClick={this.props.toggleSideMenu}>
+				    			<Bun side={"top"} burgerOpen={this.props.isOpen} />
+				    			<Patty rotatez={"45deg"} burgerOpen={this.props.isOpen} />
+				    			<Patty rotatez={"-45deg"} burgerOpen={this.props.isOpen} />
+				    			<Bun side={"bottom"} burgerOpen={this.props.isOpen} />
 				    		</button>
 				        <div style={{display: "flex", alignItems: "center", marginLeft: "2rem"}}>
 					        <Avatar className="d-inline-block align-top">
