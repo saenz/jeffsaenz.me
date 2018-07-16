@@ -8,6 +8,7 @@ import Footer from '../components/footer'
 import config from '../config/site'
 //import '../styles/global'
 import favicon from '../images/favicon.ico'
+import {Link} from 'gatsby'
 
 //import "typeface-roboto"
 //import "typeface-pt-sans"
@@ -55,7 +56,13 @@ const sideMenu = css`
    	transition: transform .5s ease;
    	background-color: #e2e2e2;
    	display:block;
-   	list-type: none;
+   	ul {
+   		list-style: none;
+   		padding-left: 1rem;
+   		li {
+   			padding: .25rem;
+   		}
+   	}
 `
 
 const animation = css`
@@ -80,7 +87,7 @@ const pusher = css`
     position: relative;
     backface-visibility: hidden;
     overflow: hidden;
-    min-height: 100%;
+	min-height: 100%;
     transition: transform .5s ease;
     z-index: 2;
     &:after {
@@ -98,7 +105,7 @@ const pusher = css`
 `
 const pushable = css`
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     padding: 0!important;
     &:not(body) {
     	transform: translate3d(0,0,0);
@@ -180,8 +187,8 @@ class Layout extends React.Component {
 									)}
 								>
 									<ul>
-										<li>About</li>
-										<li>Services</li>
+										<li><Link to="/services">Services</Link></li>
+										<li><Link to="/">About Me</Link></li>
 										<li>Contact</li>
 									</ul>
 								</aside>
@@ -189,8 +196,8 @@ class Layout extends React.Component {
 						</header>
 				
 
-		    	<div className={pushable} onClick={this.toggleSideMenu}>
-		    		<div className={cx(
+		    	<div className={pushable} onClick={this.state.sideMenuOpen ? this.toggleSideMenu : null}>
+		    		<div onScroll={e => e.preventDefault()} className={cx(
 	    				pusher, 
 	    				{[dimmed] : this.state.sideMenuOpen},
 	    				{[animation] : this.state.sideMenuOpen}
