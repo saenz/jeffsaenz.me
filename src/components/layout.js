@@ -17,6 +17,8 @@ import favicon from '../images/favicon.ico'
 // main site style
 import '../styles/index.scss'
 
+const SIDEMENU_WIDTH = "150px";
+
 const alertBox = css`
 	position: absolute;
 	position: fixed;
@@ -36,19 +38,19 @@ const alertBox = css`
 	  transform: translateY(0%);
 	}
 `
-const PageContent = styled.div`
+const pageContent = css`
 	transition: transform 1s;
 `
-const MainWrap = styled.div`
+const mainwrap = css`
 	position: relative;
 `
 
-const SideMenu = styled.aside`
+const sideMenu = css`
     position: fixed;
     padding-top: 1rem;
     top: 0;
-    left: -290px;
-    width: 290px;
+    left: -${SIDEMENU_WIDTH};
+    width: ${SIDEMENU_WIDTH};
     height: 100vh;
     min-height: 100%;
     background: #fff;
@@ -62,17 +64,63 @@ const SideMenu = styled.aside`
 `
 
 const animation = css`
-	transform: translateX(290px);
+	//transform: translateX(${SIDEMENU_WIDTH});
+	transform: translate3d(${SIDEMENU_WIDTH},0,0);
 `
 
-
-const MsgBar = styled.div`
+const msgBar = css`
 	font-size: .75rem;
     background-color: #322348;
+    display: block;
+    text-align: center;
+    color: #fff;
+    padding: 0.5rem 1rem;
 `
 
-const Header = styled.header`
-	transition: transform 1s;
+const header = css`
+	transition: transform .5s ease;
+`
+const pusher = css`
+	background: white;
+    position: relative;
+    backface-visibility: hidden;
+    overflow: hidden;
+    min-height: 100%;
+    transition: transform .5s ease;
+    z-index: 2;
+    &:after {
+    	position: fixed;
+	    top: 0;
+	    right: 0;
+	    content: '';
+	    background-color: rgba(0,0,0,.4);
+	    overflow: hidden;
+	    opacity: 0;
+	    transition: opacity .5s;
+	    will-change: opacity;
+	    z-index: 1000;
+    }
+`
+const pushable = css`
+    height: 100%;
+    overflow-x: hidden;
+    padding: 0!important;
+    &:not(body) {
+    	transform: translate3d(0,0,0);
+    	&>.${pusher} {
+    		&:after {
+    			position:absolute;
+    		}
+    	}
+	}
+`
+
+const dimmed = css`
+	&:after {
+		width: 100%!important;
+    	height: 100%!important;
+    	opacity: 1!important;
+	}
 `
 
 class Layout extends React.Component {
@@ -97,7 +145,7 @@ class Layout extends React.Component {
 		    <div className='App'>
 		    	<Helmet
 	    			bodyAttributes={{
-						class: this.state.sideMenuOpen ? 'nav_openx' : ''
+						class: this.state.sideMenuOpen ? 'nav_open' : ''
 					}}
 				>
 			        <title>{config.siteTitle}</title>
@@ -119,27 +167,36 @@ class Layout extends React.Component {
 			      </div>
 			    </div>
 			    
-			    <MainWrap id="mainWrap">
-			    	<MsgBar className={"d-block text-center text-bold text-white px-3 py-2"}>
-						If you need a developer, I'm for hire.
-					</MsgBar>
-					
-					<Header className={cx("sticky-top", {[animation]: this.state.sideMenuOpen})}>
-    					<SideMenu>
-	    					<ul>
-	    						<li>About</li>
-	    						<li>Services</li>
-	    						<li>Contact</li>
-	    					</ul>
-    					</SideMenu>
-    				    <Menu toggleSideMenu={this.toggleSideMenu} />
-    				</Header>
+				<div className={msgBar}>
+					If you need a developer, I'm for hire.
+				</div>	  
 
-    				<PageContent  className={cx({[animation]: this.state.sideMenuOpen})}>{this.props.children}</PageContent>
+				<header className={cx(
+						header, 
+						"sticky-top",
+						{[animation] : this.state.sideMenuOpen}
+					)}
+				>
+					<aside className={sideMenu}>
+						<ul>
+							<li>About</li>
+							<li>Services</li>
+							<li>Contact</li>
+						</ul>
+					</aside>
+			    	<Menu toggleSideMenu={this.toggleSideMenu} />
+				</header>
 
-			    	<Footer  className={cx({[animation]: this.state.sideMenuOpen})}/>
-		    	</MainWrap>
-
+		    	<div className={pushable}>
+		    		<div className={cx(
+		    				pusher, 
+		    				{[dimmed] : this.state.sideMenuOpen},
+		    				{[animation] : this.state.sideMenuOpen}
+		    			)}>
+						<main className={pageContent}>{this.props.children}</main>
+			    		<Footer />
+			    	</div>
+	    		</div>
 		    </div>
 		)
 	}

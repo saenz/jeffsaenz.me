@@ -137,7 +137,14 @@ html {
   }
 }
 
-body.nav_open #mainWrap {
-    overflow: hidden;
-    height: 100vh;
+// aside menu
+body.nav_open { //,body.nav_open #mainWrap {
+  overflow: hidden;
+  height: 100vh
 }
+
+//body.nav_open #mainWrap > header, 
+//body.nav_open #mainWrap .pusher > main,
+//body.nav_open #mainWrap .pusher > footer {
+  //transform: translateX(290px);
+//}
