@@ -138,9 +138,18 @@ html {
 }
 
 // aside menu
-body.nav_open { //,body.nav_open #mainWrap {
+body.nav_open {
   overflow: hidden;
-  height: 100vh
+  height: 100vh// or 100%
+}
+
+body.nav_open #___gatsby {
+  //overflow: hidden;
+  //height: 100vh// or 100%
+}
+body.nav_open .App {
+  //overflow: hidden;
+  //height: 100vh // or 100%
 }
 
 //body.nav_open #mainWrap > header, 

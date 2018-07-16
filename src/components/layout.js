@@ -46,9 +46,9 @@ const mainwrap = css`
 `
 
 const sideMenu = css`
-    position: fixed;
+    position: absolute;
     padding-top: 1rem;
-    top: 0;
+    //top: 0;
     left: -${SIDEMENU_WIDTH};
     width: ${SIDEMENU_WIDTH};
     height: 100vh;
@@ -57,7 +57,7 @@ const sideMenu = css`
     text-align: left;
     overflow-y: hidden;
     z-index: 999;
-   	transition: transform 1s;
+   	transition: transform .5s ease;
    	background-color: #e2e2e2;
    	display:block;
    	list-type: none;
@@ -103,7 +103,7 @@ const pusher = css`
 `
 const pushable = css`
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 0!important;
     &:not(body) {
     	transform: translate3d(0,0,0);
@@ -170,29 +170,36 @@ class Layout extends React.Component {
 				<div className={msgBar}>
 					I'm for Hire. 
 				</div>	  
+						<header className={cx(
+								header, 
+								"sticky-top",
+								//{[animation] : this.state.sideMenuOpen}
+							)}
+						>
 
-				<header className={cx(
-						header, 
-						"sticky-top",
-						{[animation] : this.state.sideMenuOpen}
-					)}
-				>
-					<aside className={sideMenu}>
-						<ul>
-							<li>About</li>
-							<li>Services</li>
-							<li>Contact</li>
-						</ul>
-					</aside>
-			    	<Menu toggleSideMenu={this.toggleSideMenu} />
-				</header>
+							<Menu toggleSideMenu={this.toggleSideMenu} />
+							<aside className={cx(
+								sideMenu,
+								{[animation] : this.state.sideMenuOpen}
+								)}
+							>
+								<ul>
+									<li>About</li>
+									<li>Services</li>
+									<li>Contact</li>
+								</ul>
+							</aside>
+						</header>
+				
 
 		    	<div className={pushable}>
 		    		<div className={cx(
-		    				pusher, 
-		    				{[dimmed] : this.state.sideMenuOpen},
-		    				{[animation] : this.state.sideMenuOpen}
-		    			)}>
+	    				pusher, 
+	    				{[dimmed] : this.state.sideMenuOpen},
+	    				{[animation] : this.state.sideMenuOpen}
+	    			)}>
+
+
 						<main className={pageContent}>{this.props.children}</main>
 			    		<Footer />
 			    	</div>
