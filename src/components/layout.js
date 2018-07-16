@@ -69,7 +69,7 @@ const animation = css`
 `
 
 const msgBar = css`
-	font-size: .75rem;
+	font-size: 1rem;
     background-color: #322348;
     display: block;
     text-align: center;
@@ -133,16 +133,15 @@ class Layout extends React.Component {
     	this.toggleSideMenu = this.toggleSideMenu.bind(this);
     }
 
-    toggleSideMenu(isOpen) {
+    toggleSideMenu() {
     	this.setState(prevstate => ({
     		sideMenuOpen: !prevstate.sideMenuOpen 
     	}))
-    	console.log('toggleSideMenu called isOpen =' + isOpen)
     }
 
 	render() {
 		return (
-		    <div className='App'>
+			<div className={"App"}>
 		    	<Helmet
 	    			bodyAttributes={{
 						class: this.state.sideMenuOpen ? 'nav_open' : ''
@@ -178,21 +177,23 @@ class Layout extends React.Component {
 						>
 
 							<Menu toggleSideMenu={this.toggleSideMenu} />
-							<aside className={cx(
-								sideMenu,
-								{[animation] : this.state.sideMenuOpen}
-								)}
-							>
-								<ul>
-									<li>About</li>
-									<li>Services</li>
-									<li>Contact</li>
-								</ul>
-							</aside>
+							<div style={{position: "relative"}}>
+								<aside className={cx(
+									sideMenu,
+									{[animation] : this.state.sideMenuOpen}
+									)}
+								>
+									<ul>
+										<li>About</li>
+										<li>Services</li>
+										<li>Contact</li>
+									</ul>
+								</aside>
+							</div>
 						</header>
 				
 
-		    	<div className={pushable}>
+		    	<div className={pushable} onClick={this.toggleSideMenu}>
 		    		<div className={cx(
 	    				pusher, 
 	    				{[dimmed] : this.state.sideMenuOpen},
@@ -204,7 +205,7 @@ class Layout extends React.Component {
 			    		<Footer />
 			    	</div>
 	    		</div>
-		    </div>
+	    	</div>
 		)
 	}
 }

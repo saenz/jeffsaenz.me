@@ -13,7 +13,7 @@ import ModalFooter from 'reactstrap/lib/ModalFooter'
 import 'whatwg-fetch'
 
 const footer = css`
-	transition: transform 1s;
+	transition: transform .5s ease;
 	padding-bottom: .5rem;
 	.site-link {
 	  color: white;
