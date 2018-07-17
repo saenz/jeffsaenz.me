@@ -9,6 +9,11 @@ import config from '../config/site'
 //import '../styles/global'
 import favicon from '../images/favicon.ico'
 import {Link} from 'gatsby'
+import AtSignIcon from 'react-feather/dist/icons/at-sign'
+import CodeIcon from 'react-feather/dist/icons/code'
+import InfoIcon from 'react-feather/dist/icons/info'
+
+
 
 //import "typeface-roboto"
 //import "typeface-pt-sans"
@@ -41,9 +46,14 @@ const pageContent = css`
 	transition: transform 1s;
 `
 
+const matched = css`
+   	background-color: #FAFAFA;
+   	border-left: 5px solid #2780E3;
+`
+
 const sideMenu = css`
     position: absolute;
-    padding-top: 1rem;
+    //padding-top: 1rem;
     //top: 0;
     left: -${SIDEMENU_WIDTH};
     width: ${SIDEMENU_WIDTH};
@@ -54,22 +64,29 @@ const sideMenu = css`
     overflow-y: hidden;
     z-index: 999;
    	transition: transform .5s ease;
-   	background-color: #e2e2e2;
+   	background-color: white;
    	display:block;
    	ul {
    		list-style: none;
    		padding-left: 0;
    		li {
-   			padding: .5rem 1rem;
+   			padding: .5rem 0;
    			font-size: 1rem;
+		    border-bottom: 1px solid #eee;
    			&:hover {
    				background: rgba(0,0,0,.05);
     			color: rgba(0,0,0,.95);
+   			}
+   			a {
+   				padding-left: .5rem;
    			}
    		}
    	}
 `
 
+const border = css`
+	border-left: 5px solid transparent;
+`
 const animation = css`
 	//transform: translateX(${SIDEMENU_WIDTH});
 	transform: translate3d(${SIDEMENU_WIDTH},0,0);
@@ -135,6 +152,13 @@ const activeMenuItem = css`
 	font-weight: 700;
 	//background-color: rgba(0,0,0,.4);
 `
+
+const icon = css`
+	margin-right: .25rem;
+    width: 25px;
+    vertical-align: middle;
+`
+
 class Layout extends React.Component {
 	constructor(props) {
     	super(props);
@@ -152,6 +176,8 @@ class Layout extends React.Component {
     }
 
 	render() {
+		console.log('location=' + JSON.stringify(this.props.location))
+
 		return (
 			<div className={"App"}>
 		    	<Helmet
@@ -192,14 +218,47 @@ class Layout extends React.Component {
 
 							<div style={{position: "relative"}}>
 								<aside className={cx(
-									sideMenu,
-									{[animation] : this.state.sideMenuOpen}
+										sideMenu,
+										{[animation] : this.state.sideMenuOpen}
 									)}
 								>
 									<ul>
-										<li><Link exact to="/services" activeClassName={activeMenuItem}>Services</Link></li>
-										<li><Link exact to="/" activeClassName={activeMenuItem}>About Me</Link></li>
-										<li><Link exact to="/contact" activeClassName={activeMenuItem}>Contact</Link></li>
+										<li className={cx(
+ 												border, 
+												{[matched]: this.props.location.pathname === "/services"}
+											)}
+										>
+											<Link exact to="/services" activeClassName={activeMenuItem}>
+												<icon name="code">
+													<CodeIcon className={icon} size={18} />
+												</icon>
+												<span>Services</span>
+											</Link>
+										</li>
+										<li className={cx(
+												border, 
+												{[matched]: this.props.location.pathname === "/contact"}
+											)}
+										>
+											<Link exact to="/contact" activeClassName={activeMenuItem}>
+												<icon name="at-sign">
+													<AtSignIcon  className={icon} size={18} />
+												</icon>
+												<span>Contact</span>
+											</Link>
+										</li>
+										<li className={cx(
+												border, 
+												{[matched]: this.props.location.pathname === "/"}
+											)}
+										>
+											<Link exact to="/" activeClassName={activeMenuItem}>
+												<icon name="info">
+													<InfoIcon className={icon} size={18} />
+												</icon>
+												<span>About Me</span>
+											</Link>
+										</li>
 									</ul>
 								</aside>
 							</div>
