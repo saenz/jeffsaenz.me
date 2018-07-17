@@ -1,4 +1,9 @@
- module.exports = {
+// process env
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+module.exports = {
 	siteMetadata: {
     	title: 'Jeff Saenz Freelance Web Developer',
     	author: 'saenz',
@@ -7,12 +12,27 @@
   	},
  	plugins: [
 		{
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        autoLabel: true
-      }
-    },
+      		resolve: `gatsby-plugin-emotion`,
+      		options: {
+        		autoLabel: true
+      		}
+    	},
 		'gatsby-plugin-react-helmet',
-   	'gatsby-plugin-sass'
+   		'gatsby-plugin-sass',
+   		{
+		    resolve: `gatsby-plugin-google-analytics`,
+		    options: {
+		        trackingId: "process.env.GOOGLE_ANALYTICS",
+		        // Puts tracking script in the head instead of the body
+		        head: false,
+		        // Setting this parameter is optional
+		        anonymize: true,
+		        // Setting this parameter is also optional
+		        respectDNT: true,
+		        // Avoids sending pageview hits from custom paths
+		        exclude: ["/preview/**", "/do-not-track/me/too/"],
+		    },
+    	},
  	]
  }
+
