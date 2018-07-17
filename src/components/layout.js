@@ -21,7 +21,7 @@ import InfoIcon from 'react-feather/dist/icons/info'
 // main site style
 import '../styles/index.scss'
 
-const SIDEMENU_WIDTH = "150px";
+const SIDEMENU_WIDTH = "290px";
 
 const alertBox = css`
 	position: absolute;
@@ -70,18 +70,27 @@ const sideMenu = css`
    		list-style: none;
    		padding-left: 0;
    		li {
-   			padding: .5rem 0;
-   			font-size: 1rem;
 		    border-bottom: 1px solid #eee;
    			&:hover {
    				background: rgba(0,0,0,.05);
     			color: rgba(0,0,0,.95);
    			}
    			a {
-   				padding-left: .5rem;
+   				padding: 4px 17px;
+   			    font-size: 18px;
+   			    line-height: 2.5;
+   			    width: 100%;
+   			}
+   			icon {
+   				display: inline-block;
    			}
    		}
    	}
+`
+const icon = css`
+	margin-right: 14px;
+    width: 25px;
+    vertical-align: middle;
 `
 
 const border = css`
@@ -153,10 +162,11 @@ const activeMenuItem = css`
 	//background-color: rgba(0,0,0,.4);
 `
 
-const icon = css`
-	margin-right: .25rem;
-    width: 25px;
-    vertical-align: middle;
+const footnote = css`
+	text-align: center; 
+	color: rgba(34,34,34,0.67);
+	padding: 0 .5rem;
+	line-height: 1em;
 `
 
 class Layout extends React.Component {
@@ -230,7 +240,7 @@ class Layout extends React.Component {
 										>
 											<Link exact to="/services" activeClassName={activeMenuItem}>
 												<icon name="code">
-													<CodeIcon className={icon} size={18} />
+													<CodeIcon className={icon} size={21} />
 												</icon>
 												<span>Services</span>
 											</Link>
@@ -242,7 +252,7 @@ class Layout extends React.Component {
 										>
 											<Link exact to="/contact" activeClassName={activeMenuItem}>
 												<icon name="at-sign">
-													<AtSignIcon  className={icon} size={18} />
+													<AtSignIcon  className={icon} size={21} />
 												</icon>
 												<span>Contact</span>
 											</Link>
@@ -254,12 +264,15 @@ class Layout extends React.Component {
 										>
 											<Link exact to="/" activeClassName={activeMenuItem}>
 												<icon name="info">
-													<InfoIcon className={icon} size={18} />
+													<InfoIcon className={icon} size={21} />
 												</icon>
 												<span>About Me</span>
 											</Link>
 										</li>
 									</ul>
+									<div className={footnote}>
+										<small>This site was built using gatsbyjs.org</small>
+									</div>
 								</aside>
 							</div>
 						</header>
