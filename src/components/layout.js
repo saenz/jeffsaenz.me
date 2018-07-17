@@ -58,9 +58,13 @@ const sideMenu = css`
    	display:block;
    	ul {
    		list-style: none;
-   		padding-left: 1rem;
+   		padding-left: 0;
    		li {
-   			padding: .25rem;
+   			padding: .5rem .5rem;
+   			&:hover {
+   				background: rgba(0,0,0,.05);
+    			color: rgba(0,0,0,.95);
+   			}
    		}
    	}
 `
