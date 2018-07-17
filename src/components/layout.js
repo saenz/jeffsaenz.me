@@ -60,7 +60,7 @@ const sideMenu = css`
    		list-style: none;
    		padding-left: 0;
    		li {
-   			padding: .5rem .5rem;
+   			padding: .5rem 1rem;
    			&:hover {
    				background: rgba(0,0,0,.05);
     			color: rgba(0,0,0,.95);
@@ -129,6 +129,11 @@ const dimmed = css`
 	}
 `
 
+const activeMenuItem = css`
+	color: #4c9e59;
+	font-weight: 700;
+	//background-color: rgba(0,0,0,.4);
+`
 class Layout extends React.Component {
 	constructor(props) {
     	super(props);
@@ -191,9 +196,9 @@ class Layout extends React.Component {
 									)}
 								>
 									<ul>
-										<li><Link to="/services">Services</Link></li>
-										<li><Link to="/">About Me</Link></li>
-										<li>Contact</li>
+										<li><Link exact to="/services" activeClassName={activeMenuItem}>Services</Link></li>
+										<li><Link exact to="/" activeClassName={activeMenuItem}>About Me</Link></li>
+										<li><Link exact to="/contact" activeClassName={activeMenuItem}>Contact</Link></li>
 									</ul>
 								</aside>
 							</div>
