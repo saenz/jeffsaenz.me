@@ -61,6 +61,7 @@ const sideMenu = css`
    		padding-left: 0;
    		li {
    			padding: .5rem 1rem;
+   			font-size: 1rem;
    			&:hover {
    				background: rgba(0,0,0,.05);
     			color: rgba(0,0,0,.95);
