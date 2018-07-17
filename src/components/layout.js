@@ -165,8 +165,9 @@ const activeMenuItem = css`
 const footnote = css`
 	text-align: center; 
 	color: rgba(34,34,34,0.67);
-	padding: 0 .5rem;
-	line-height: 1em;
+	font-size: 18px;
+	padding: 0 1rem;
+	line-height: 1.25;
 `
 
 class Layout extends React.Component {
@@ -271,7 +272,7 @@ class Layout extends React.Component {
 										</li>
 									</ul>
 									<div className={footnote}>
-										<small>This site was built using gatsbyjs.org</small>
+										This site was built using gatsbyjs.org
 									</div>
 								</aside>
 							</div>
