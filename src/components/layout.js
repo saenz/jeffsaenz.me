@@ -57,8 +57,8 @@ const sideMenu = css`
     //top: 0;
     left: -${SIDEMENU_WIDTH};
     width: ${SIDEMENU_WIDTH};
-    height: 100vh;
-    min-height: 100%;
+    //height: 100vh;
+    //min-height: 100%;
     background: #fff;
     text-align: left;
     overflow-y: hidden;
