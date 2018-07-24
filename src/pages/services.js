@@ -28,20 +28,32 @@ const Services = (props) => {
 	    			<div className={main}>
     					<section className="skills">
 							<h2>Services</h2>
-							<p>I have a menu of services to choose from. Please let me know how I can help.</p>
-							<ul>
-								<li>Web Site Maintenance</li>
-								<li>UI Design</li>
-								<li>CSS</li>
-								<li>Responsive Design (Mobile First)</li>
-								<li>Progressive Web Apps</li>
-								<li>Cross Browser Testing</li>
-								<li>Search Engine Optimization (SEO)</li>
-								<li>Application Monitoring</li>
-								<li>Email Marketing</li>
-								<li>Google Analytics</li>
-								<li>Wordpress Development</li>
-							</ul>
+							<p>I provide a number of services that will help to improve your site design / maintenance.</p>
+							<div className="container">
+								<div className="row">
+									<div className="col">
+										<ul>
+											<li>Web Site Design / Maintenance</li>
+											<li>Site Performance</li>
+											<li>Responsive Design</li>
+											<li>Interoperability</li>
+											<li>Accessibility</li>
+											<li>Security</li>
+											<li>Search Engine Optimization (SEO)</li>
+										</ul>
+									</div>
+									<div className="col">
+										<ul>
+											<li>Application Monitoring</li>
+											<li>Progressive Web App (PWA) Design</li>
+											<li>Analytics Integration</li>
+											<li>Wordpress Development</li>
+											<li>Cross Browser Testing</li>
+											<li>Web Hosting Consulting</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</section>
     				</div>
     			</Container>

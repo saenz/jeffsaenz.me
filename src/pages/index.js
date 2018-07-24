@@ -39,7 +39,7 @@ export default props => (
 				        <section className="skills">
 							<h2>Skills</h2>
 							<p>
-								Lately, I've been more focused on front end development  but I do have experience with the full stack. 
+								I specialize in front end development  but I do have experience with the full stack. 
 								I like to wear many hats, contribute in any way possible and learn new things.
 							</p>
 							<div className="container">
@@ -55,7 +55,7 @@ export default props => (
 										</ul>
 									</div>
 									<div className="col">
-										<ul className="col">
+										<ul>
 											<li>Wordpress</li>
 											<li>SQL / MySQL / MongoDB / GraphQL</li>
 											<li>Node / Express</li>
@@ -75,7 +75,10 @@ export default props => (
 				        </section>
 
 				        <section className="experience">  
-				          	<h2>Experience (Latest)</h2>
+				          	<h2>
+				          		Experience{' '}
+				          		<small class="text-muted">(Latest freelance / full-time)</small>
+				          	</h2>
 				          	<div className={job}>
 				            	<div>
 				              		<strong>Foods Up App</strong>
