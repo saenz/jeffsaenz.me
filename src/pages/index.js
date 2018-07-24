@@ -28,29 +28,45 @@ export default props => (
 					        <h2>About Me</h2>
 
 					        <p>
-					        	Well rounded freelance web developer with a good / strong foundation in 
-					        	front end and full stack development. My latest endeavors include implementing SSR w/ React 
+					        	Well rounded  web developer with a good / strong foundation in 
+					        	front end and full stack development. Lately I've been working with Wordpress, SSR w/ React 
 					        	using <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">nextjs.org</a>, serverless 
-					        	computing with AWS, GraphQL and static site generation using specifically 
+					        	computing with AWS and static site generation with
 					        	&nbsp;<a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">gatsbyjs.org</a>.
 					        </p> 
 				        </section>
 
 				        <section className="skills">
 							<h2>Skills</h2>
-							My primary skills include the following:
-							<ul>
-								<li>React</li>
-								<li>HTML/CSS3</li>
-								<li>Unix</li>
-								<li>Javascript</li>
-								<li>Bootstrap / Responsive Design</li>
-								<li>jQuery</li>
-								<li>SQL / MySQL / MongoDB / GraphQL</li>
-								<li>Node / Express</li>
-								<li>Gatsby / GraphQl</li>
-								<li>Enterprise application monitoring</li>
-							</ul>
+							<p>
+								Lately, I've been more focused on Front End Development  but I do have experience with the full stack. 
+								I like to wear many hats, contribute in any way possible and learn new things.
+							</p>
+							<div className="container">
+								<div className="row">
+									<div className="col">
+										<ul>
+											<li>HTML/CSS3</li>
+											<li>Bootstrap / Responsive Design</li>
+											<li>UI Frameworks - Backbone, React</li>
+											<li>Unix/Linux/Windows</li>
+											<li>Javascript</li>
+											<li>jQuery</li>
+										</ul>
+									</div>
+									<div className="col">
+										<ul className="col">
+											<li>Wordpress</li>
+											<li>SQL / MySQL / MongoDB / GraphQL</li>
+											<li>Node / Express</li>
+											<li>Gatsby / GraphQl</li>
+											<li>Application monitoring</li>
+											<li>Git</li>
+											<li>SEO</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 				        </section>
 
 				        <section className="edu">
@@ -59,7 +75,7 @@ export default props => (
 				        </section>
 
 				        <section className="experience">  
-				          	<h2>Experience</h2>
+				          	<h2>Experience (Latest)</h2>
 				          	<div className={job}>
 				            	<div>
 				              		<strong>Foods Up App</strong>
@@ -97,6 +113,39 @@ export default props => (
 				            	</div>  
 				          	</div>
 				        </section>  
+
+				        <section className="links">  
+				          	<h2>Links</h2>
+				          	<ul>
+				          		<li>
+						            <a 
+					            		href="https://twitter.com/dstppluto" 
+					            		target="_blank" 
+					            		rel="noopener noreferrer"
+				            		>
+				            			Twitter
+				            		</a>
+				          		</li>
+				          		<li>
+						            <a 
+						            	href="https://github.com/saenz" 
+						            	target="_blank" 
+				        		    	rel="noopener noreferrer"
+				            		>
+				            			Github
+				            		</a>
+				          		</li>
+				          		<li>
+						            <a 
+						            	href="https://www.linkedin.com/in/jeffsaenz/" 
+						            	target="_blank" 
+				        		    	rel="noopener noreferrer"
+				            		>
+				            			Linkedin
+				            		</a>
+				          		</li>
+				          	</ul>
+				        </section>
 
 				        <section className="resume">
 	          				<h2>Resume</h2>
