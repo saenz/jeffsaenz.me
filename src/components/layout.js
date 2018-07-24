@@ -235,6 +235,18 @@ class Layout extends React.Component {
 								>
 									<ul>
 										<li className={cx(
+												border, 
+												{[matched]: this.props.location.pathname === "/"}
+											)}
+										>
+											<Link exact to="/" activeClassName={activeMenuItem}>
+												<icon name="home">
+													<HomeIcon className={icon} size={21} />
+												</icon>
+												<span>Home</span>
+											</Link>
+										</li>
+										<li className={cx(
  												border, 
 												{[matched]: this.props.location.pathname === "/services"}
 											)}
@@ -256,18 +268,6 @@ class Layout extends React.Component {
 													<AtSignIcon  className={icon} size={21} />
 												</icon>
 												<span>Contact</span>
-											</Link>
-										</li>
-										<li className={cx(
-												border, 
-												{[matched]: this.props.location.pathname === "/"}
-											)}
-										>
-											<Link exact to="/" activeClassName={activeMenuItem}>
-												<icon name="home">
-													<HomeIcon className={icon} size={21} />
-												</icon>
-												<span>Home</span>
 											</Link>
 										</li>
 									</ul>
