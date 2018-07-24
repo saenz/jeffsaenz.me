@@ -39,7 +39,7 @@ export default props => (
 				        <section className="skills">
 							<h2>Skills</h2>
 							<p>
-								Lately, I've been more focused on Front End Development  but I do have experience with the full stack. 
+								Lately, I've been more focused on front end development  but I do have experience with the full stack. 
 								I like to wear many hats, contribute in any way possible and learn new things.
 							</p>
 							<div className="container">
