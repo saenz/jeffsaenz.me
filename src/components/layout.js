@@ -12,7 +12,7 @@ import {Link} from 'gatsby'
 import AtSignIcon from 'react-feather/dist/icons/at-sign'
 import CodeIcon from 'react-feather/dist/icons/code'
 import HomeIcon from 'react-feather/dist/icons/home'
-
+import Container from 'reactstrap/lib/Container'
 
 
 //import "typeface-roboto"
@@ -22,6 +22,12 @@ import HomeIcon from 'react-feather/dist/icons/home'
 import '../styles/index.scss'
 
 const SIDEMENU_WIDTH = "290px";
+
+const App = css`
+	@media (min-width: 992px) {
+    	max-width: 960px;
+	}
+`
 
 const alertBox = css`
 	position: absolute;
@@ -190,108 +196,108 @@ class Layout extends React.Component {
 		console.log('location=' + JSON.stringify(this.props.location))
 
 		return (
-			<div className={"App"}>
-		    	<Helmet
-	    			bodyAttributes={{
-						class: this.state.sideMenuOpen ? 'nav_open' : ''
-					}}
-				>
-			        <title>{config.siteTitle}</title>
-			        <link rel="icon" href={favicon} />
-			        <meta name="description" content={config.description} />
-			        <meta property="og:title" content={config.siteTitle} />
-			        <meta property="og:url" content={config.siteUrl} />
-			        <meta property="og:locale" content="en_US" />
-			        <meta property="og:type" content="website" />
-			        <meta property="og:site_name" content={config.siteTitle} />		        
-	    		</Helmet>
+			<div className={App}>
+			    	<Helmet
+		    			bodyAttributes={{
+							class: this.state.sideMenuOpen ? 'nav_open' : ''
+						}}
+					>
+				        <title>{config.siteTitle}</title>
+				        <link rel="icon" href={favicon} />
+				        <meta name="description" content={config.description} />
+				        <meta property="og:title" content={config.siteTitle} />
+				        <meta property="og:url" content={config.siteUrl} />
+				        <meta property="og:locale" content="en_US" />
+				        <meta property="og:type" content="website" />
+				        <meta property="og:site_name" content={config.siteTitle} />		        
+		    		</Helmet>
 
-			    <div className={alertBox} id="alert-box" style={{transform: "translateY(-100%)"}}>
-			      <div className="alert alert-warning alert-dismissible" role="alert">
-			        <strong>Alert</strong> There was an error attempting to submit the form. Please try again later.
-			        <button type="button" className="close"  aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			    </div>
-			    
-				<div className={msgBar}>
-					I'm for Hire. 
-				</div>	  
-						<header className={cx(
-								header, 
-								"sticky-top",
-								//{[animation] : this.state.sideMenuOpen}
-							)}
-						>
+				    <div className={alertBox} id="alert-box" style={{transform: "translateY(-100%)"}}>
+				      <div className="alert alert-warning alert-dismissible" role="alert">
+				        <strong>Alert</strong> There was an error attempting to submit the form. Please try again later.
+				        <button type="button" className="close"  aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				    </div>
+				    
+					<div className={msgBar}>
+						I'm for Hire. 
+					</div>	  
+							<header className={cx(
+									header, 
+									"sticky-top",
+									//{[animation] : this.state.sideMenuOpen}
+								)}
+							>
 
-							<Menu toggleSideMenu={this.toggleSideMenu} isOpen={ this.state.sideMenuOpen }/>
+								<Menu toggleSideMenu={this.toggleSideMenu} isOpen={ this.state.sideMenuOpen }/>
 
-							<div style={{position: "relative"}}>
-								<aside className={cx(
-										sideMenu,
-										{[animation] : this.state.sideMenuOpen}
-									)}
-								>
-									<ul>
-										<li className={cx(
-												border, 
-												{[matched]: this.props.location.pathname === "/"}
-											)}
-										>
-											<Link exact to="/" activeClassName={activeMenuItem}>
-												<icon name="home">
-													<HomeIcon className={icon} size={21} />
-												</icon>
-												<span>Home</span>
-											</Link>
-										</li>
-										<li className={cx(
- 												border, 
-												{[matched]: this.props.location.pathname === "/services"}
-											)}
-										>
-											<Link exact to="/services" activeClassName={activeMenuItem}>
-												<icon name="code">
-													<CodeIcon className={icon} size={21} />
-												</icon>
-												<span>Services</span>
-											</Link>
-										</li>
-										<li className={cx(
-												border, 
-												{[matched]: this.props.location.pathname === "/contact"}
-											)}
-										>
-											<Link exact to="/contact" activeClassName={activeMenuItem}>
-												<icon name="at-sign">
-													<AtSignIcon  className={icon} size={21} />
-												</icon>
-												<span>Contact</span>
-											</Link>
-										</li>
-									</ul>
-									<div className={footnote}>
-										This site was built using gatsbyjs.org
-									</div>
-								</aside>
-							</div>
-						</header>
-				
+								<div style={{position: "relative"}}>
+									<aside className={cx(
+											sideMenu,
+											{[animation] : this.state.sideMenuOpen}
+										)}
+									>
+										<ul>
+											<li className={cx(
+													border, 
+													{[matched]: this.props.location.pathname === "/"}
+												)}
+											>
+												<Link exact to="/" activeClassName={activeMenuItem}>
+													<icon name="home">
+														<HomeIcon className={icon} size={21} />
+													</icon>
+													<span>Home</span>
+												</Link>
+											</li>
+											<li className={cx(
+	 												border, 
+													{[matched]: this.props.location.pathname === "/services"}
+												)}
+											>
+												<Link exact to="/services" activeClassName={activeMenuItem}>
+													<icon name="code">
+														<CodeIcon className={icon} size={21} />
+													</icon>
+													<span>Services</span>
+												</Link>
+											</li>
+											<li className={cx(
+													border, 
+													{[matched]: this.props.location.pathname === "/contact"}
+												)}
+											>
+												<Link exact to="/contact" activeClassName={activeMenuItem}>
+													<icon name="at-sign">
+														<AtSignIcon  className={icon} size={21} />
+													</icon>
+													<span>Contact</span>
+												</Link>
+											</li>
+										</ul>
+										<div className={footnote}>
+											This site was built using gatsbyjs.org
+										</div>
+									</aside>
+								</div>
+							</header>
+					
 
-		    	<div className={pushable} onClick={this.state.sideMenuOpen ? this.toggleSideMenu : null}>
-		    		<div onScroll={e => e.preventDefault()} className={cx(
-	    				pusher, 
-	    				{[dimmed] : this.state.sideMenuOpen},
-	    				{[animation] : this.state.sideMenuOpen}
-	    			)}>
+			    	<div className={pushable} onClick={this.state.sideMenuOpen ? this.toggleSideMenu : null}>
+			    		<div onScroll={e => e.preventDefault()} className={cx(
+		    				pusher, 
+		    				{[dimmed] : this.state.sideMenuOpen},
+		    				{[animation] : this.state.sideMenuOpen}
+		    			)}>
 
 
-						<main className={pageContent}>{this.props.children}</main>
-			    		<Footer />
-			    	</div>
-	    		</div>
-	    	</div>
+							<main className={pageContent}>{this.props.children}</main>
+				    		<Footer />
+				    	</div>
+		    		</div>
+		    </div>
 		)
 	}
 }
