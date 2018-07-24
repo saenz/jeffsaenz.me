@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {Container} from "reactstrap"
+import Container from 'reactstrap/lib/Container'
 import {css} from "react-emotion"
 
 const body = css`

@@ -12,8 +12,6 @@ import {Link} from 'gatsby'
 import AtSignIcon from 'react-feather/dist/icons/at-sign'
 import CodeIcon from 'react-feather/dist/icons/code'
 import HomeIcon from 'react-feather/dist/icons/home'
-import Container from 'reactstrap/lib/Container'
-
 
 //import "typeface-roboto"
 //import "typeface-pt-sans"
@@ -23,6 +21,7 @@ import '../styles/index.scss'
 
 const SIDEMENU_WIDTH = "290px";
 
+// todo: how can i reference our breakpoints defined in bootstrap. may have to use a utils/media.js config file.
 const App = css`
 	@media (min-width: 992px) {
     	max-width: 960px;
@@ -193,7 +192,7 @@ class Layout extends React.Component {
     }
 
 	render() {
-		console.log('location=' + JSON.stringify(this.props.location))
+		//console.log('location=' + JSON.stringify(this.props.location))
 
 		return (
 			<div className={App}>
@@ -246,9 +245,9 @@ class Layout extends React.Component {
 												)}
 											>
 												<Link exact to="/" activeClassName={activeMenuItem}>
-													<icon name="home">
+													<i name="home">
 														<HomeIcon className={icon} size={21} />
-													</icon>
+													</i>
 													<span>Home</span>
 												</Link>
 											</li>
@@ -258,9 +257,9 @@ class Layout extends React.Component {
 												)}
 											>
 												<Link exact to="/services" activeClassName={activeMenuItem}>
-													<icon name="code">
+													<i name="code">
 														<CodeIcon className={icon} size={21} />
-													</icon>
+													</i>
 													<span>Services</span>
 												</Link>
 											</li>
@@ -270,9 +269,9 @@ class Layout extends React.Component {
 												)}
 											>
 												<Link exact to="/contact" activeClassName={activeMenuItem}>
-													<icon name="at-sign">
+													<i name="at-sign">
 														<AtSignIcon  className={icon} size={21} />
-													</icon>
+													</i>
 													<span>Contact</span>
 												</Link>
 											</li>

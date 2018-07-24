@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from 'react-helmet'
 import config from '../config/site'
 import SEO from '../components/seo'
-import {Container} from 'reactstrap'
+import Container from 'reactstrap/lib/Container'
 import Layout from '../components/layout'
 import {css} from 'react-emotion'
 
