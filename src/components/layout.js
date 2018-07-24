@@ -11,7 +11,7 @@ import favicon from '../images/favicon.ico'
 import {Link} from 'gatsby'
 import AtSignIcon from 'react-feather/dist/icons/at-sign'
 import CodeIcon from 'react-feather/dist/icons/code'
-import InfoIcon from 'react-feather/dist/icons/info'
+import HomeIcon from 'react-feather/dist/icons/home'
 
 
 
@@ -264,10 +264,10 @@ class Layout extends React.Component {
 											)}
 										>
 											<Link exact to="/" activeClassName={activeMenuItem}>
-												<icon name="info">
-													<InfoIcon className={icon} size={21} />
+												<icon name="home">
+													<HomeIcon className={icon} size={21} />
 												</icon>
-												<span>About Me</span>
+												<span>Home</span>
 											</Link>
 										</li>
 									</ul>

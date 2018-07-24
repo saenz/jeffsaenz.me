@@ -28,10 +28,19 @@ const Services = (props) => {
 	    			<div className={main}>
     					<section className="skills">
 							<h2>Services</h2>
-							<p>The web development services that I provide include the following:</p>
+							<p>I have a menu of services to choose from. Please let me know how I can help.</p>
 							<ul>
-								<li>CSS Development</li>
-								<li>More...</li>
+								<li>Web Site Maintenance</li>
+								<li>UI Design</li>
+								<li>CSS</li>
+								<li>Responsive Design (Mobile First)</li>
+								<li>Progressive Web Apps</li>
+								<li>Cross Browser Testing</li>
+								<li>Search Engine Optimization (SEO)</li>
+								<li>Application Monitoring</li>
+								<li>Email Marketing</li>
+								<li>Google Analytics</li>
+								<li>Wordpress Development</li>
 							</ul>
 						</section>
     				</div>
