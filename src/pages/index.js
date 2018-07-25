@@ -61,6 +61,7 @@ export default props => (
 									</div>
 									<div className="col-sm-12 col-md-6">
 										<ul style={{marginBottom: 0}}>
+											<li>Restful API Integration</li>
 											<li>Wordpress</li>
 											<li>Node / Express</li>
 											<li>Gatsby</li>
