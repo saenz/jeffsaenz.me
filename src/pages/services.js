@@ -28,7 +28,9 @@ const Services = (props) => {
 	    			<div className={main}>
     					<section className="skills">
 							<h2>Services</h2>
-							<p>I provide a number of services that will help to improve your site design / maintenance.</p>
+							<p>
+								My services are tailored for small businesses and non-profits looking to enhance their web presence.
+							</p>
 							<div className="container">
 								<div className="row">
 									<div className="col">
@@ -50,6 +52,7 @@ const Services = (props) => {
 											<li>Wordpress Development</li>
 											<li>Cross Browser Testing</li>
 											<li>Web Hosting Consulting</li>
+											<li>Social Media Integration</li>
 										</ul>
 									</div>
 								</div>

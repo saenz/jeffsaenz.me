@@ -264,7 +264,6 @@ class Footer extends React.Component {
 			              	<div className="name">Jeff Saenz</div>
 			             	<div className="city">Cypress, Ca</div>
 			              	<p/>
-			              	<div>Phone<br/>714-457-2595</div>
 			              	<div style={{marginTop: '1rem'}}>
 			              		Email <br/><a className={emailAddress} href="mailto:jeffsaenz.me@gmail.com" rel="noreferrer">jeffsaenz.me@gmail.com</a>
 			              	</div>

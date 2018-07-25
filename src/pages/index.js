@@ -26,42 +26,44 @@ export default props => (
 			      	<div className={body}>
 				        <section className="aboutme">
 					        <h2>About Me</h2>
-
 					        <p>
-					        	Well rounded  web developer with a good / strong foundation in 
-					        	front end and full stack development. Lately I've been working with Wordpress, SSR w/ React 
-					        	using <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">nextjs.org</a>, serverless 
-					        	computing with AWS and static site generation with
+					        	Well rounded  web developer with a strong foundation in 
+					        	front end and full stack development. Lately I've been working with Wordpress, React 
+					        	using <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">nextjs.org</a>, 
+					        	Responsive Design and static site generation with
 					        	&nbsp;<a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">gatsbyjs.org</a>.
 					        </p> 
+					        <p>
+					        	I currently reside / work in Southern California but I will consider re-location.
+					        </p>
 				        </section>
 
 				        <section className="skills">
 							<h2>Skills</h2>
 							<p>
 								I specialize in front end development  but I do have experience with the full stack. 
-								I like to wear many hats, contribute in any way possible and learn new things.
+								I'm comfortable wearing many hats and always enjoy learning new tech.
 							</p>
 							<div className="container">
 								<div className="row">
 									<div className="col">
-										<ul>
-											<li>HTML/CSS3</li>
-											<li>Bootstrap / Responsive Design</li>
-											<li>UI Frameworks - Backbone, React</li>
-											<li>Unix/Linux/Windows</li>
+										<ul style={{marginBottom: 0}}>
+											<li>HTML5 / CSS3</li>
+											<li>Bootstrap / SASS / Responsive Design</li>
+											<li>Backbone, React</li>
+											<li>Unix / Windows</li>
 											<li>Javascript</li>
 											<li>jQuery</li>
 										</ul>
 									</div>
 									<div className="col">
-										<ul>
+										<ul style={{marginBottom: 0}}>
 											<li>Wordpress</li>
-											<li>SQL / MySQL / MongoDB / GraphQL</li>
+											<li>NoSQL / MySQL</li>
 											<li>Node / Express</li>
-											<li>Gatsby / GraphQl</li>
+											<li>Gatsby</li>
 											<li>Application monitoring</li>
-											<li>Git</li>
+											<li>PHP</li>
 											<li>SEO</li>
 										</ul>
 									</div>
