@@ -257,7 +257,7 @@ class Footer extends React.Component {
 		        <section className={contact}>
 		        	<h2>Contact</h2>
 		          
-		          	<p>Please feel free to either contact me at the email/phone below or drop me a line using the form.</p>
+		          	<p>Please feel free to either contact me at the email below or drop me a line using the form.</p>
 
 			         <div className="contact-wrapper">
 			            <div className="contact-text">
