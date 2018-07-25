@@ -65,6 +65,7 @@ const Services = (props) => {
 										<li>Browser Testing</li>
 										<li>Web Hosting Support</li>
 										<li>Social Media Integration</li>
+										<li>Databases  (NoSQL / MySQL) </li>
 									</ul>
 								</div>
 								<div className="col-sm-12 col-md-6">
