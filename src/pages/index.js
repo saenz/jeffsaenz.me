@@ -28,42 +28,43 @@ export default props => (
 					        <h2>About Me</h2>
 					        <p>
 					        	Well rounded  web developer with a strong foundation in 
-					        	front end and full stack development. Lately I've been working with Wordpress, React 
+					        	front end and full stack development. 
+					        </p>
+					        <p>
+					        	Latest projects include public facing Wordpress site development, React prototyping
 					        	using <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">nextjs.org</a>, 
-					        	Responsive Design and static site generation with
+					        	responsive design with Bootstrap and static site generation with
 					        	&nbsp;<a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">gatsbyjs.org</a>.
 					        </p> 
 					        <p>
-					        	I currently reside / work in Southern California but I will consider re-location.
+					        	I currently reside / work in Southern California but I will consider re-location for
+					        	a full-time role.
 					        </p>
 				        </section>
 
 				        <section className="skills">
 							<h2>Skills</h2>
-							<p>
-								I specialize in front end development  but I do have experience with the full stack. 
+							<p> 
 								I'm comfortable wearing many hats and always enjoy learning new tech.
 							</p>
 							<div className="container">
 								<div className="row">
-									<div className="col">
+									<div className="col-sm-12 col-md-6">
 										<ul style={{marginBottom: 0}}>
-											<li>HTML5 / CSS3</li>
-											<li>Bootstrap / SASS / Responsive Design</li>
+											<li>HTML5, CSS3, SASS</li>
+											<li>Bootstrap, Responsive Design</li>
 											<li>Backbone, React</li>
-											<li>Unix / Windows</li>
-											<li>Javascript</li>
-											<li>jQuery</li>
+											<li>Unix, Windows</li>
+											<li>Javascript, jQuery, PHP</li>
+											<li>NoSQL, MySQL</li>
 										</ul>
 									</div>
-									<div className="col">
+									<div className="col-sm-12 col-md-6">
 										<ul style={{marginBottom: 0}}>
 											<li>Wordpress</li>
-											<li>NoSQL / MySQL</li>
 											<li>Node / Express</li>
 											<li>Gatsby</li>
 											<li>Application monitoring</li>
-											<li>PHP</li>
 											<li>SEO</li>
 										</ul>
 									</div>
