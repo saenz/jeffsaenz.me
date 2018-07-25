@@ -11,6 +11,12 @@ module.exports = {
     	//disqus: 'gatsby-starter-blog'// put your disqus ID here
   	},
  	plugins: [
+  	{
+    	resolve: `gatsby-plugin-canonical-urls`,
+    	options: {
+      	siteUrl: `https://www.jeffsaenz.me`,
+    	},
+  	},
 		{
       		resolve: `gatsby-plugin-emotion`,
       		options: {
