@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, {css} from 'react-emotion'
 import avatar from '../images/jeff.jpg'
+import {Link} from 'gatsby'
 
 const AVATAR_IMG_SIZE = 48
 
@@ -112,26 +113,25 @@ class Menu extends React.Component {
 	render() {
 		return (
 	    	<nav className="navbar navbar-dark bg-primary" style={{justifyContent: 'flex-start'}}>
-			    {/*<Link to="/" className="navbar-brand">*/}
-			    		<button className={burger} onClick={this.props.toggleSideMenu}>
-			    			<Bun side={"top"} burgerOpen={this.props.isOpen} />
-			    			<Patty rotatez={"45deg"} burgerOpen={this.props.isOpen} />
-			    			<Patty rotatez={"-45deg"} burgerOpen={this.props.isOpen} />
-			    			<Bun side={"bottom"} burgerOpen={this.props.isOpen} />
-			    		</button>
-			        <div style={{display: "flex", alignItems: "center", marginLeft: "2rem"}}>
-				        <Avatar className="d-inline-block align-top">
-				          <div className="avatar-image">
-				            <img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
-				          </div>
-				        </Avatar>
-				        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
-				          <div className={fullName}>Jeff Saenz</div>
-				          <div className={profession}>Front End Web Developer <span className="d-none d-md-inline">(Freelance)</span></div>
-				        </div>
-			    	</div>
-
-			    {/*</Link>*/}
+	    		<button className={burger} onClick={this.props.toggleSideMenu}>
+	    			<Bun side={"top"} burgerOpen={this.props.isOpen} />
+	    			<Patty rotatez={"45deg"} burgerOpen={this.props.isOpen} />
+	    			<Patty rotatez={"-45deg"} burgerOpen={this.props.isOpen} />
+	    			<Bun side={"bottom"} burgerOpen={this.props.isOpen} />
+	    		</button>
+		        <div style={{display: "flex", alignItems: "center", marginLeft: "2rem"}}>
+			        <Avatar className="d-inline-block align-top">
+			          	<Link to="/">
+			          		<div className="avatar-image">
+			            		<img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
+			         		</div>
+			         	</Link>
+			        </Avatar>
+			        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
+			          <div className={fullName}>Jeff Saenz</div>
+			          <div className={profession}>Front End Web Developer <span className="d-none d-md-inline">(Freelance)</span></div>
+			        </div>
+		    	</div>
 			</nav>
 		)
 	}
