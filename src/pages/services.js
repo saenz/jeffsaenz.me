@@ -12,6 +12,17 @@ const main = css`
   		margin-top: 1rem;
 	}
 `
+const header = css`
+	text-align: center;
+	//background-color: #e2e2e2; 
+	border: 1px solid #e2e2e2;
+	padding: .5rem .5rem; 
+	margin-bottom: .5rem;
+	&:hover {
+		background-color: #e2e2e2;
+	}
+`
+
 const Services = (props) => {
 	const postNode = {
     	title: `Services - ${config.siteTitle}`,
@@ -26,35 +37,53 @@ const Services = (props) => {
     			<SEO postNode={postNode} pagePath="services" customTitle />
     			<Container>
 	    			<div className={main}>
-    					<section className="skills">
+    					<section className="services">
 							<h2>Services</h2>
 							<p>
 								My services are tailored for small businesses and non-profits looking to enhance their web presence.
 							</p>
-							<div className="container">
-								<div className="row">
-									<div className="col">
-										<ul>
-											<li>Web Site Design / Maintenance</li>
-											<li>Site Performance</li>
-											<li>Responsive Design</li>
-											<li>Interoperability</li>
-											<li>Accessibility</li>
-											<li>Security</li>
-											<li>Search Engine Optimization (SEO)</li>
-										</ul>
-									</div>
-									<div className="col">
-										<ul>
-											<li>Application Monitoring</li>
-											<li>Progressive Web App (PWA) Design</li>
-											<li>Analytics Integration</li>
-											<li>Wordpress Development</li>
-											<li>Cross Browser Testing</li>
-											<li>Web Hosting Consulting</li>
-											<li>Social Media Integration</li>
-										</ul>
-									</div>
+							<div className="row">
+								<div className="col-sm-12 col-md-6">
+									<header className={header}>Wordpress</header>
+									<ul>
+										<li>Site Design</li>
+										<li>Performance Testing</li>
+										<li>Responsive Design (mobile first)</li>
+										<li>Theme / Plugin Customization</li>
+										<li>Accessibility</li>
+										<li>Security Scanning</li>
+										<li>Search Engine Optimization (SEO)</li>
+										<li>CSS3 Styling</li>
+									</ul>
+								</div>
+								<div className="col-sm-12 col-md-6">
+									<header className={header}>Development</header>
+									<ul>
+										<li>PHP, Javascript, HTML5, CSS3</li>
+										<li>Progressive Web App (PWA) Design</li>
+										<li>Analytics Integration</li>
+										<li>Browser Testing</li>
+										<li>Web Hosting Support</li>
+										<li>Social Media Integration</li>
+									</ul>
+								</div>
+								<div className="col-sm-12 col-md-6">
+									<header className={header}>Operations (DevOps)</header>
+									<ul>
+										<li>Application Monitoring</li>
+										<li>Source Code Control (git)</li>
+										<li>Linux / Windows Administration</li>
+										<li>Docker Deployments</li>
+										<li>Continuous Integration</li>
+									</ul>
+								</div>
+								<div className="col-sm-12 col-md-6">
+									<header className={header}>Testing</header>
+									<ul>
+										<li>Site Auditing</li>
+										<li>Browser / Device Testing</li>
+										<li>Error Reporting</li>
+									</ul>
 								</div>
 							</div>
 						</section>
