@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, {css} from 'react-emotion'
-import avatar from '../images/jeff.jpg'
+import avatar from '../images/jeff-min.jpg'
 import {Link} from 'gatsby'
 
 const AVATAR_IMG_SIZE = 48
