@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from 'reactstrap/lib/Container'
 import {css} from "react-emotion"
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const body = css`
 	margin-top: 1rem;
@@ -32,9 +33,9 @@ export default props => (
 					        </p>
 					        <p>
 					        	Latest projects include public facing Wordpress site development, React prototyping
-					        	using <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">nextjs.org</a>, 
+					        	using <OutboundLink href="https://nextjs.org" target="_blank" rel="noopener noreferrer">nextjs.org</OutboundLink>, 
 					        	responsive design with Bootstrap and static site generation with
-					        	&nbsp;<a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">gatsbyjs.org</a>.
+					        	&nbsp;<OutboundLink href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">gatsbyjs.org</OutboundLink>.
 					        </p> 
 					        <p>
 					        	I currently reside / work in Southern California but I will consider re-location for
@@ -81,7 +82,7 @@ export default props => (
 				        <section className="experience">  
 				          	<h2>
 				          		Experience{' '}
-				          		<small class="text-muted">(Latest freelance / full-time)</small>
+				          		<small className="text-muted">(Latest freelance / full-time)</small>
 				          	</h2>
 				          	<div className={job}>
 				            	<div>
@@ -125,31 +126,31 @@ export default props => (
 				          	<h2>Links</h2>
 				          	<ul>
 				          		<li>
-						            <a 
+						            <OutboundLink 
 					            		href="https://twitter.com/dstppluto" 
 					            		target="_blank" 
 					            		rel="noopener noreferrer"
 				            		>
 				            			Twitter
-				            		</a>
+				            		</OutboundLink>
 				          		</li>
 				          		<li>
-						            <a 
+						            <OutboundLink 
 						            	href="https://github.com/saenz" 
 						            	target="_blank" 
 				        		    	rel="noopener noreferrer"
 				            		>
 				            			Github
-				            		</a>
+				            		</OutboundLink>
 				          		</li>
 				          		<li>
-						            <a 
+						            <OutboundLink 
 						            	href="https://www.linkedin.com/in/jeffsaenz/" 
 						            	target="_blank" 
 				        		    	rel="noopener noreferrer"
 				            		>
 				            			Linkedin
-				            		</a>
+				            		</OutboundLink>
 				          		</li>
 				          	</ul>
 				        </section>
