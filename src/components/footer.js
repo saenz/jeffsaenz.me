@@ -9,7 +9,7 @@ import Modal from 'reactstrap/lib/Modal'
 import ModalHeader from 'reactstrap/lib/ModalHeader'
 import ModalBody from 'reactstrap/lib/ModalBody'
 import ModalFooter from 'reactstrap/lib/ModalFooter'
-
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import 'whatwg-fetch'
 
 const footer = css`
@@ -265,7 +265,7 @@ class Footer extends React.Component {
 			             	<div className="city">Cypress, Ca</div>
 			              	<p/>
 			              	<div style={{marginTop: '1rem'}}>
-			              		Email <br/><a className={emailAddress} href="mailto:jeffsaenz.me@gmail.com" rel="noreferrer">jeffsaenz.me@gmail.com</a>
+			              		Email <br/><OutboundLink className={emailAddress} href="mailto:jeffsaenz.me@gmail.com" rel="noreferrer">jeffsaenz.me@gmail.com</OutboundLink>
 			              	</div>
 			            </div>
 		        
@@ -354,27 +354,27 @@ class Footer extends React.Component {
 		      	<div className={main}>
 		        	<ul>
 				        <li>
-				            <a 
+				            <OutboundLink
 				            	href="https://twitter.com/dstppluto" 
 				            	target="_blank" 
 				            	rel="noopener noreferrer"
 				            >
 				              	<span className="sr-only">Twitter</span>
 								<Twitter color={"#474c55"} className={icon} size={18} />
-				            </a>
+				            </OutboundLink>
 				        </li>
 				        <li>
-				            <a 
+				            <OutboundLink 
 				            	href="https://github.com/saenz" 
 				            	target="_blank" 
 				            	rel="noopener noreferrer"
 				            >
 				              	<span className="sr-only">Github</span>
 				              	<Github color={"#474c55"} className={icon} size={18}/>
-				            </a>
+				            </OutboundLink>
 				        </li>
 				        <li>
-				            <a 
+				            <OutboundLink 
 				            	href="https://www.linkedin.com/in/jeffsaenz/" 
 				            	target="_blank" 
 				            	rel="noopener noreferrer"
@@ -382,19 +382,25 @@ class Footer extends React.Component {
 				              	<span className="sr-only">LinkedIn</span>
 				              	{/*<i className={`fa fa-linkedin ${icon}`}></i>*/}
 				              	<LinkedIn color={"#474c55"} className={icon} size={18} />
-				            </a>
+				            </OutboundLink>
 				        </li>
 		          	</ul>
 		        	<p>
-		          		<a className="site-link" href="http://jeffsaenz.me" rel="noopener noreferrer">jeffsaenz.me</a>
+		          		<OutboundLink 
+		          			className="site-link" 
+		          			href="http://jeffsaenz.me" 
+		          			rel="noopener noreferrer"
+		          		>
+		          			jeffsaenz.me
+		          		</OutboundLink>
 		        	</p>
 		      	</div>
 		      	<div className={code}>
-		        	This site was built using: <a href="https://getbootstrap.com" rel="noreferrer">bootstrap</a>,
-		        	&nbsp;<a href="https://serverless.com" rel="noreferrer">serverless framework</a>, 
-		        	&nbsp;<a href="https://gatsbyjs.org" rel="noreferrer">gatsbyjs</a>, 
-		        	&nbsp;<a href="https://reactjs.org" rel="noreferrer">reactjs</a>, 
-		        	&nbsp;<a href="https://fontawesome.com/" rel="noreferrer">font awesome</a> and more.
+		        	This site was built using: <OutboundLink href="https://getbootstrap.com" rel="noreferrer">bootstrap</OutboundLink>,
+		        	&nbsp;<OutboundLink href="https://serverless.com" rel="noreferrer">serverless framework</OutboundLink>, 
+		        	&nbsp;<OutboundLink href="https://gatsbyjs.org" rel="noreferrer">gatsbyjs</OutboundLink>, 
+		        	&nbsp;<OutboundLink href="https://reactjs.org" rel="noreferrer">reactjs</OutboundLink>, 
+		        	&nbsp;<OutboundLink href="https://fontawesome.com/" rel="noreferrer">font awesome</OutboundLink> and more.
 		      	</div>
 
 		    </footer>
