@@ -7,7 +7,12 @@ import Menu from '../components/menu'
 import Footer from '../components/footer'
 import config from '../config/site'
 //import '../styles/global'
-import favicon from '../images/favicon.ico'
+//import favicon from '../images/favicon.ico'
+import appleIcon from '../images/apple-touch-icon.png'
+import favicon16 from '../images/favicon-16x16.png'
+import favicon32 from '../images/favicon-32x32.png'
+import safariPinnedTabIcon from '../images/safari-pinned-tab.svg'
+
 import {Link} from 'gatsby'
 import AtSignIcon from 'react-feather/dist/icons/at-sign'
 import CodeIcon from 'react-feather/dist/icons/code'
@@ -202,13 +207,18 @@ class Layout extends React.Component {
 						}}
 					>
 				        <title>{config.siteTitle}</title>
-				        <link rel="icon" href={favicon} />
+				        {/*<link rel="icon" href={favicon} />*/}
+				        <link rel="apple-touch-icon" sizes="180x180" href={appleIcon} />
+						<link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
+						<link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
+						<link rel="mask-icon" href={safariPinnedTabIcon} color="#5bbad5" />
+						<meta name="theme-color" content="#ffffff" />	    
 				        <meta name="description" content={config.description} />
 				        <meta property="og:title" content={config.siteTitle} />
 				        <meta property="og:url" content={config.siteUrl} />
 				        <meta property="og:locale" content="en_US" />
 				        <meta property="og:type" content="website" />
-				        <meta property="og:site_name" content={config.siteTitle} />		        
+				        <meta property="og:site_name" content={config.siteTitle} />	
 		    		</Helmet>
 
 				    <div className={alertBox} id="alert-box" style={{transform: "translateY(-100%)"}}>
