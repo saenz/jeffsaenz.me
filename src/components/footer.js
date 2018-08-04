@@ -106,7 +106,7 @@ const contact = css`
 	.contact-form {
 	  width:100%;
 	  margin: 0 auto;
-	  align-items: flex-start
+	  align-items: flex-start;
 	  order: 1;
 	}
 	@media (min-width: 35em) {

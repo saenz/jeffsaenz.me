@@ -255,7 +255,7 @@ class Layout extends React.Component {
 												)}
 											>
 												<Link exact to="/" activeClassName={activeMenuItem}>
-													<i name="home">
+													<i>
 														<HomeIcon className={icon} size={21} />
 													</i>
 													<span>Home</span>
@@ -267,7 +267,7 @@ class Layout extends React.Component {
 												)}
 											>
 												<Link exact to="/services" activeClassName={activeMenuItem}>
-													<i name="code">
+													<i>
 														<CodeIcon className={icon} size={21} />
 													</i>
 													<span>Services</span>
@@ -279,7 +279,7 @@ class Layout extends React.Component {
 												)}
 											>
 												<Link exact to="/contact" activeClassName={activeMenuItem}>
-													<i name="at-sign">
+													<i>
 														<AtSignIcon  className={icon} size={21} />
 													</i>
 													<span>Contact</span>

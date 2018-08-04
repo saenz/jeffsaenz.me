@@ -35,5 +35,6 @@
     "reactstrap": "^6.3.0",
     "typography": "^0.16.17",
     "whatwg-fetch": "^2.0.4"
-  }
+  },
+  "devDependencies": {}
 }
