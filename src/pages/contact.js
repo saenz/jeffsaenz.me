@@ -19,18 +19,18 @@ const Contact = (props) => {
 
 	return (
 		<Layout location={props.location}>
-	       	<div>
-    		    <Helmet>
-        			<title>{`Contact - ${postNode.title}`}</title>
-      			</Helmet>
-    			<SEO postNode={postNode} pagePath="contact" customTitle />
-    			<Container>
-	    			<div className={main}>
-    				</div>
-    			</Container>
-    		</div>
-    	</Layout>
-    )
+      <div>
+		    <Helmet>
+    			<title>{`Contact - ${postNode.title}`}</title>
+  			</Helmet>
+  			<SEO postNode={postNode} pagePath="contact" customTitle />
+  			<Container>
+    			<div className={main}>
+  				</div>
+  			</Container>
+  		</div>
+    </Layout>
+  )
 }
 
 export default Contact

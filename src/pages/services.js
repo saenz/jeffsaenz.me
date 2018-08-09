@@ -38,7 +38,7 @@ const Services = (props) => {
     			<Container>
 	    			<div className={main}>
     					<section className="services">
-							<h2>Services</h2>
+							<h1>Services</h1>
 							<p>
 								My services are tailored for small businesses and non-profits looking to enhance their web presence.
 							</p>

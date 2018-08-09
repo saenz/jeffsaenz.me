@@ -255,7 +255,7 @@ class Footer extends React.Component {
 			<footer className={footer}>
 		        <Container>
 		        <section className={contact}>
-		        	<h2>Contact</h2>
+		        	<h1>Contact</h1>
 		          
 		          	<p>Please feel free to either contact me at the email below or drop me a line using the form.</p>
 

@@ -17,6 +17,7 @@ import {Link} from 'gatsby'
 import AtSignIcon from 'react-feather/dist/icons/at-sign'
 import CodeIcon from 'react-feather/dist/icons/code'
 import HomeIcon from 'react-feather/dist/icons/home'
+import BlogIcon from 'react-feather/dist/icons/book-open'
 
 //import "typeface-roboto"
 //import "typeface-pt-sans"
@@ -271,6 +272,18 @@ class Layout extends React.Component {
 														<CodeIcon className={icon} size={21} />
 													</i>
 													<span>Services</span>
+												</Link>
+											</li>
+											<li className={cx(
+													border, 
+													{[matched]: this.props.location.pathname === "/blog"}
+												)}
+											>
+												<Link exact to="/blog" activeClassName={activeMenuItem}>
+													<i>
+														<BlogIcon  className={icon} size={21} />
+													</i>
+													<span>Blog</span>
 												</Link>
 											</li>
 											<li className={cx(
