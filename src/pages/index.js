@@ -26,7 +26,8 @@ export default props => (
 	    		<Container>
 			      	<div className={body}>
 				        <section className="aboutme">
-					        <h1>About Me</h1>
+					        <h1>Home</h1>
+
 					        <p>
 					        	Well rounded  web developer with a strong foundation in 
 					        	front end and full stack development. 
