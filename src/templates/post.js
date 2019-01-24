@@ -8,6 +8,7 @@ import PageBody from '../components/pagebody'
 import TagList from '../components/taglist'
 import PostLinks from '../components/postlinks'
 import PostDate from '../components/postdate'
+import PostTitle from '../components/posttitle'
 import SEO from '../components/seo'
 import Layout from "../components/layout"
 
@@ -39,7 +40,8 @@ const PostTemplate = ({ data, location }) => {
         <Hero title={title} image={heroImage} height={'50vh'} />
 
         <Container>
-          {tags && <TagList tags={tags} />}
+          {/*{tags && <TagList tags={tags} />}*/}
+          <PostTitle title={title} />
           <PostDate date={publishDate} />
           <PageBody body={body} />
           <PostLinks previous={postIndex.previous} next={postIndex.next} />

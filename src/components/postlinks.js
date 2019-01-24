@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   //max-width: ${props => props.theme.sizes.maxWidthCentered};
   a {
     //background: ${props => props.theme.colors.base};
-    color: white;
+    //color: white;
     padding: 1em;
     border-radius: 2px;
     text-decoration: none;

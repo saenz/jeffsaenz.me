@@ -315,7 +315,11 @@ class Layout extends React.Component {
 		    			)}>
 
 
-							<main className={pageContent}>{this.props.children}</main>
+							<main className={pageContent}>
+								{this.props.children}
+
+								<hr />
+							</main>
 				    		<Footer />
 				    	</div>
 		    		</div>

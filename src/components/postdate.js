@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 
 const Wrapper = styled.div`
-  margin: 0 auto 2em;
+  //argin: 0 auto 2em;
   //max-width: ${props => props.theme.sizes.maxWidthCentered};
 `
 

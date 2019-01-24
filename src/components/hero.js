@@ -19,10 +19,10 @@ const BgImg = styled(Img)`
     height: auto;
   }
   & > img {
-    object-fit: cover !important;
+    object-fit: fill !important;
     object-position: 50% 50% !important;
   }
-  &::before {
+  {/*&::before {
     content: '';
     background: rgba(0, 0, 0, 0.25);
     position: absolute;
@@ -33,7 +33,7 @@ const BgImg = styled(Img)`
     height: 100%;
     width: 100%;
     z-index: 1;
-  }
+  }*/}
 `
 
 const Title = styled.h1`
@@ -58,7 +58,7 @@ const Hero = props => (
       sizes={props.image.sizes}
       backgroundColor={'#eeeeee'}
     />
-    <Title>{props.title}</Title>
+    {/*<Title>{props.title}</Title>*/}
   </Wrapper>
 )
 

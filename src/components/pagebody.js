@@ -23,19 +23,12 @@ const Body = styled.div`
   }
   h3 {
     font-size: 1em;
+    color: #4c9e59;
   }
 
   p {
     line-height: 1.6;
-    margin: 0 0 2em 0;
-  }
-
-  a {
-    transition: 0.2s;
-    color: #efefef;
-    &:hover {
-      color: #efefef;
-    }
+    margin: 0 0 1em 0;
   }
 
   del {
@@ -84,7 +77,7 @@ const Body = styled.div`
   blockquote {
     font-style: italic;
     border-left: 4px solid #efefef};
-    padding: 0 0 0 0.5em;
+    //padding: 0 0 0 0.5em;
   }
 
   pre {
@@ -94,6 +87,10 @@ const Body = styled.div`
     span {
       background: inherit !important;
     }
+  }
+
+  img {
+    max-width: 100%;
   }
 `
 
