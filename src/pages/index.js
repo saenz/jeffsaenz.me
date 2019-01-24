@@ -49,9 +49,6 @@ export default props => (
 
 				        <section className="skills">
 							<h2>Skills</h2>
-							<p> 
-								I'm comfortable wearing many hats and always enjoy learning new tech.
-							</p>
 							<div className="container">
 								<div className="row">
 									<div className="col-sm-12 col-md-6">
