@@ -51,7 +51,7 @@ const Services = (props) => {
 										<li>Responsive Design (mobile first)</li>
 										<li>Theme / Plugin Customization</li>
 										<li>Accessibility</li>
-										<li>Security Scanning</li>
+										<li>Security</li>
 										<li>Search Engine Optimization (SEO)</li>
 										<li>CSS3 Styling</li>
 									</ul>
