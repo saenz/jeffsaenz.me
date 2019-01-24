@@ -232,7 +232,7 @@ class Layout extends React.Component {
 				    </div>
 				    
 					<div className={msgBar}>
-						I'm for Hire. 
+						I'm for <a href="/contact">Hire</a> 
 					</div>	  
 							<header className={cx(
 									header, 
