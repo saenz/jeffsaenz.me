@@ -400,7 +400,7 @@ class Footer extends React.Component {
 		        	&nbsp;<OutboundLink href="https://serverless.com" rel="noreferrer">serverless framework</OutboundLink>, 
 		        	&nbsp;<OutboundLink href="https://gatsbyjs.org" rel="noreferrer">gatsbyjs</OutboundLink>, 
 		        	&nbsp;<OutboundLink href="https://reactjs.org" rel="noreferrer">reactjs</OutboundLink>, 
-		        	&nbsp;<OutboundLink href="https://fontawesome.com/" rel="noreferrer">font awesome</OutboundLink> and more.
+		        	&nbsp;<OutboundLink href="https://contentful.com/" rel="noreferrer">contentful</OutboundLink> and more.
 		      	</div>
 
 		    </footer>
