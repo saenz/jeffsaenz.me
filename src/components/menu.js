@@ -108,31 +108,70 @@ const patty = props =>
 
 const Patty = styled('i')(patty)
 
+const activeMenuItem = css`
+	color: #4c9e59;
+	font-weight: 700;
+	//background-color: rgba(0,0,0,.4);
+`
+
+const MainMenu = styled.div`
+	padding: .5rem;
+	background-color: #efefef;
+	display: flex;
+	flexDirection: row; 
+	flex-wrap: nowrap;
+	justify-content: space-around;
+`
+
 // menu
 class Menu extends React.Component {
 	render() {
 		return (
-	    	<nav className="navbar navbar-dark bg-primary" style={{justifyContent: 'flex-start'}}>
-	    		<button className={burger} onClick={this.props.toggleSideMenu}>
-	    			<Bun side={"top"} burgerOpen={this.props.isOpen} />
-	    			<Patty rotatez={"45deg"} burgerOpen={this.props.isOpen} />
-	    			<Patty rotatez={"-45deg"} burgerOpen={this.props.isOpen} />
-	    			<Bun side={"bottom"} burgerOpen={this.props.isOpen} />
-	    		</button>
-		        <div style={{display: "flex", alignItems: "center", marginLeft: "2rem"}}>
-			        <Avatar className="d-inline-block align-top">
-			          	<Link to="/">
-			          		<div className="avatar-image">
-			            		<img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
-			         		</div>
-			         	</Link>
-			        </Avatar>
-			        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
-			          <div className={fullName}>Jeff Saenz</div>
-			          <div className={profession}>Front End / Full Stack Web Dev <span className="d-none d-md-inline"></span></div>
-			        </div>
-		    	</div>
-			</nav>
+	    	<div>
+		    	<nav className="navbar navbar-dark bg-primary" style={{justifyContent: 'flex-start'}}>
+		    		<button className={burger} onClick={this.props.toggleSideMenu}>
+		    			<Bun side={"top"} burgerOpen={this.props.isOpen} />
+		    			<Patty rotatez={"45deg"} burgerOpen={this.props.isOpen} />
+		    			<Patty rotatez={"-45deg"} burgerOpen={this.props.isOpen} />
+		    			<Bun side={"bottom"} burgerOpen={this.props.isOpen} />
+		    		</button>
+			        <div style={{display: "flex", alignItems: "center", marginLeft: "2rem"}}>
+				        <Avatar className="d-inline-block align-top">
+				          	<Link to="/">
+				          		<div className="avatar-image">
+				            		<img src={avatar} width={AVATAR_IMG_SIZE} height={AVATAR_IMG_SIZE} alt="" />
+				         		</div>
+				         	</Link>
+				        </Avatar>
+				        <div className="card-info d-inline-block align-top" style={{borderLeft: "2px solid white", paddingLeft: ".5rem"}}>
+				          <div className={fullName}>Jeff Saenz</div>
+				          <div className={profession}>Front End / Full Stack Web Dev <span className="d-none d-md-inline"></span></div>
+				        </div>
+			    	</div>
+				</nav>
+			   	<MainMenu>
+			   		<div>
+						<Link exact to="/" activeClassName={activeMenuItem}>
+							<span>Home</span>
+						</Link>
+					</div>
+			   		<div>
+			   			<Link exact to="/services" activeClassName={activeMenuItem}>
+							<span>Services</span>
+						</Link>
+					</div>
+					<div>												
+						<Link exact to="/blog" activeClassName={activeMenuItem}>
+							<span>Blog</span>
+						</Link>
+					</div>
+			   		<div>												
+			   			<Link exact to="/contact" activeClassName={activeMenuItem}>
+							<span>Contact</span>
+						</Link>
+					</div>
+			   	</MainMenu>
+			</div>
 		)
 	}
 }
