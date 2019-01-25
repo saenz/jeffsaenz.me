@@ -255,7 +255,7 @@ class Layout extends React.Component {
 													{[matched]: this.props.location.pathname === "/"}
 												)}
 											>
-												<Link exact to="/" activeClassName={activeMenuItem}>
+												<Link exact="true" to="/" activeClassName={activeMenuItem}>
 													<i>
 														<HomeIcon className={icon} size={21} />
 													</i>
@@ -267,7 +267,7 @@ class Layout extends React.Component {
 													{[matched]: this.props.location.pathname === "/services"}
 												)}
 											>
-												<Link exact to="/services" activeClassName={activeMenuItem}>
+												<Link exact="true" to="/services" activeClassName={activeMenuItem}>
 													<i>
 														<CodeIcon className={icon} size={21} />
 													</i>
@@ -279,7 +279,7 @@ class Layout extends React.Component {
 													{[matched]: this.props.location.pathname === "/blog"}
 												)}
 											>
-												<Link exact to="/blog" activeClassName={activeMenuItem}>
+												<Link exact="true" to="/blog" activeClassName={activeMenuItem}>
 													<i>
 														<BlogIcon  className={icon} size={21} />
 													</i>
@@ -291,7 +291,7 @@ class Layout extends React.Component {
 													{[matched]: this.props.location.pathname === "/contact"}
 												)}
 											>
-												<Link exact to="/contact" activeClassName={activeMenuItem}>
+												<Link exact="true" to="/contact" activeClassName={activeMenuItem}>
 													<i>
 														<AtSignIcon  className={icon} size={21} />
 													</i>

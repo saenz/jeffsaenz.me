@@ -151,22 +151,22 @@ class Menu extends React.Component {
 				</nav>
 			   	<MainMenu>
 			   		<div>
-						<Link exact to="/" activeClassName={activeMenuItem}>
+						<Link exact="true" to="/" activeClassName={activeMenuItem}>
 							<span>Home</span>
 						</Link>
 					</div>
 			   		<div>
-			   			<Link exact to="/services" activeClassName={activeMenuItem}>
+			   			<Link exact="true" to="/services" activeClassName={activeMenuItem}>
 							<span>Services</span>
 						</Link>
 					</div>
 					<div>												
-						<Link  to="/blog" activeClassName={activeMenuItem}>
+						<Link to="/blog" activeClassName={activeMenuItem}>
 							<span>Blog</span>
 						</Link>
 					</div>
 			   		<div>												
-			   			<Link exact to="/contact" activeClassName={activeMenuItem}>
+			   			<Link exact="true" to="/contact" activeClassName={activeMenuItem}>
 							<span>Contact</span>
 						</Link>
 					</div>
