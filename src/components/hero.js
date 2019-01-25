@@ -4,7 +4,7 @@ import styled from 'react-emotion'
 
 const Wrapper = styled.section`
   position: relative;
-  min-height: 300px;
+  //min-height: 300px;
 `
 
 const BgImg = styled(Img)`
@@ -13,7 +13,7 @@ const BgImg = styled(Img)`
   left: 0;
   width: 100%;
   z-index: -1;
-  min-height: 300px;
+  //min-height: 300px;
   height: auto;
   @media (min-width: 576px}) {
     height: auto;
