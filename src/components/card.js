@@ -17,7 +17,8 @@ const Post = styled.li`
     flex: 0 0 32%;
   }
   &:hover {
-    background: white;
+    background: #efefef;
+    text-decoration: none;
   }
   a {
     display: flex;
@@ -29,6 +30,10 @@ const Post = styled.li`
     .gatsby-image-wrapper {
       height: 0;
       padding-bottom: 60%;
+    }
+    &:hover {
+      text-decoration:none;
+      color: #165ba8
     }
   }
 `

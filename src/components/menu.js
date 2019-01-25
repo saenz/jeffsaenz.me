@@ -161,7 +161,7 @@ class Menu extends React.Component {
 						</Link>
 					</div>
 					<div>												
-						<Link exact to="/blog" activeClassName={activeMenuItem}>
+						<Link  to="/blog" activeClassName={activeMenuItem}>
 							<span>Blog</span>
 						</Link>
 					</div>
