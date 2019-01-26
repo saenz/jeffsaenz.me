@@ -123,6 +123,18 @@ const MainMenu = styled.div`
 	justify-content: space-around;
 `
 
+const isPartiallyActive = ({ isPartiallyCurrent }) => {
+  return isPartiallyCurrent
+    ? { className: activeMenuItem }
+    : { className: '' }
+}
+
+const PartialNavLink = props => (
+  <Link getProps={isPartiallyActive} {...props}>
+    {props.children}
+  </Link>
+)
+
 // menu
 class Menu extends React.Component {
 	render() {
@@ -161,9 +173,7 @@ class Menu extends React.Component {
 						</Link>
 					</div>
 					<div>												
-						<Link to="/blog" activeClassName={activeMenuItem}>
-							<span>Blog</span>
-						</Link>
+						<PartialNavLink to="/blog"><span>Blog</span></PartialNavLink>
 					</div>
 			   		<div>												
 			   			<Link exact="true" to="/contact" activeClassName={activeMenuItem}>
